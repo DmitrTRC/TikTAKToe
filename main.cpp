@@ -4,12 +4,15 @@
 
 #include <iostream>
 
+#include "Game.hpp"
+
 //TODO: Implement class Game
 
 int main () {
 
+    //Show logo ?
     Game game;
-    game.start ();
+    game.Start ();
 
     return 0;
 }
