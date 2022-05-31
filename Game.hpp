@@ -18,8 +18,8 @@ public:
 private:
     const int MaxMoves=9;
     int *Array; // array of cells
-    bool checkForWins(char player) //check wins
-    bool checkForDraw() //check request limits
+    bool checkForWins(char player); //check wins
+    bool checkForDraw(); //check request limits
 
 
 };
