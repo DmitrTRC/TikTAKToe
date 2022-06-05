@@ -6,6 +6,7 @@
 #include "Game.hpp"
 #include "Player.hpp"
 
+
 //TODO: Fix the code below
 Game::Game () {
 
@@ -51,19 +52,31 @@ std::string Game::InputUserName () {
     return std::string ("Dmitry");
 }
 
-std::string Game::LoadDataBase(){
+std::string Game::LoadDataBase () {
     std::cout << "DataBase" << std::endl;
     return std::string ("Database");
 }
 
- void FindPlayer(){
-     std::cout<<"find player";
- }
- char GetOpponentType(){
-     std::cout<<"GetOpponentType";
- }     
- bool IsPlayAgain(){}
-void Loop(){
-    std::cout<<"Loop";
+//TODO: Fix the code below It looks like a function is out of scope class Game
+void FindPlayer () {
+    std::cout << "find player";
 }
-bool is_playing()
+
+//TODO: function must return a char! ( Just return something like 'X' or 'O' )
+char GetOpponentType () {
+    std::cout << "GetOpponentType";
+}
+
+//TODO: function must return a bool! ( Just return something like true or false )
+bool IsPlayAgain () {}
+
+void Loop () {
+    std::cout << "Loop";
+}
+//TODO: function must return a bool! ( Just return something like true or false ) , syntax error : ';' expected or {body}
+bool is_playing ()
+
+
+//TODO: Keep all messages but fix functions. See the TODO in the code
+//TODO: Add missed messages
+//TODO: Try to add comments to the code. Specially to the functions return values and parameters

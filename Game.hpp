@@ -6,8 +6,10 @@
 class Game {
 public:
     Game (); // default constructor
-    ~Game (); 
-    void SetSecondPlayer(); // destructor
+    ~Game ();
+
+    //Todo: Fix! Ты не правильно пишешь реализацию методов в классе Game! Используй scope resolution operator ::
+    void SetSecondPlayer();
     void FindPlayer();
     char GetOpponentType();
     bool IsPlayAgain();
