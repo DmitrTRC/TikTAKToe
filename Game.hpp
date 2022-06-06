@@ -21,6 +21,7 @@ public:
     void Start (); // Game entry point
 private:
     bool is_playing_; // flag to check if the game is still running
+    std::vector<Player> players_; // vector of players
     std::string LoadDataBase();
     std::string InputUserName (); // function to get user name
 

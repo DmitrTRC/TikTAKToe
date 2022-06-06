@@ -38,7 +38,11 @@ void Game::Start () {
             player2.Name = InputUserName ();
         }
 
-        Loop ();
+        Loop (
+                while (is_playing ()) {
+
+                }
+                );
 
         IsPlayAgain ();
 // End of the Game
@@ -57,22 +61,26 @@ std::string Game::LoadDataBase () {
     return std::string ("Database");
 }
 
-//TODO: Fix the code below It looks like a function is out of scope class Game
-void FindPlayer () {
+
+void Game::FindPlayer () {
     std::cout << "find player";
 }
 
 //TODO: function must return a char! ( Just return something like 'X' or 'O' )
 char GetOpponentType () {
     std::cout << "GetOpponentType";
+    return 'X';
 }
 
 //TODO: function must return a bool! ( Just return something like true or false )
-bool IsPlayAgain () {}
+bool IsPlayAgain () {
+
+}
 
 void Loop () {
     std::cout << "Loop";
 }
+
 //TODO: function must return a bool! ( Just return something like true or false ) , syntax error : ';' expected or {body}
 bool is_playing ()
 
