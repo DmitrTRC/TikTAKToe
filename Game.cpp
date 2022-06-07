@@ -6,7 +6,6 @@
 #include "Game.hpp"
 #include "Player.hpp"
 
-
 //TODO: Fix the code below
 Game::Game () {
 
@@ -38,11 +37,7 @@ void Game::Start () {
             player2.Name = InputUserName ();
         }
 
-        Loop (
-                while (is_playing ()) {
-
-                }
-                );
+        Loop ();
 
         IsPlayAgain ();
 // End of the Game
@@ -56,35 +51,26 @@ std::string Game::InputUserName () {
     return std::string ("Dmitry");
 }
 
-std::string Game::LoadDataBase () {
+std::string Game::LoadDataBase(){
     std::cout << "DataBase" << std::endl;
     return std::string ("Database");
 }
 
-
-void Game::FindPlayer () {
-    std::cout << "find player";
+ void Game:: FindPlayer(){
+     std::cout<<"find player";
+ }
+ char Game::GetOpponentType(){
+     std::cout<<"GetOpponentType";
+     return 'X';
+ }     
+ bool Game::IsPlayAgain(){
+     std::cout<<"isPlayAgain";
+     return true;
+ }
+void Loop(){
+    std::cout<<"Loop";
 }
-
-//TODO: function must return a char! ( Just return something like 'X' or 'O' )
-char GetOpponentType () {
-    std::cout << "GetOpponentType";
-    return 'X';
+bool is_playing(){
+    std::cout<<"is_playing";
+    return true;
 }
-
-//TODO: function must return a bool! ( Just return something like true or false )
-bool IsPlayAgain () {
-
-}
-
-void Loop () {
-    std::cout << "Loop";
-}
-
-//TODO: function must return a bool! ( Just return something like true or false ) , syntax error : ';' expected or {body}
-bool is_playing ()
-
-
-//TODO: Keep all messages but fix functions. See the TODO in the code
-//TODO: Add missed messages
-//TODO: Try to add comments to the code. Specially to the functions return values and parameters
