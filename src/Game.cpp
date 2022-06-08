@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "Game.hpp"
-#include "Player.hpp"
+#include "player.hpp"
 
 //TODO: Fix the code below
 Game::Game () {
@@ -21,21 +21,28 @@ Game::~Game () {
 void Game::Start () {
     std::cout << "Game started" << std::endl;
     std::string name = InputUserName ();
-
+//
     auto db = LoadDataBase ();
-    Player player1 = FindPlayer (db, name);
-    Player player2; // Constructor is not defined
+    HumanPlayer Player1;
+    AIPlayer Player2;
 
-// Repeating the game until the user quits
-    while (is_playing ()) {
-        bool player_type = GetOpponentType ();
-        SetSecondPlayer (player_type);
+    std::cout << Player1.engageMove() << std::endl;
+    std::cout << Player2.engageMove() << std::endl;
 
-        if (player_type) {
-            player2.Name = "Computer";
-        } else {
-            player2.Name = InputUserName ();
-        }
+
+//    Player player1 = FindPlayer (db, name);
+//    Player player2; // Constructor is not defined
+//
+//// Repeating the game until the user quits
+//    while (is_playing ()) {
+//        bool player_type = GetOpponentType ();
+//        SetSecondPlayer (player_type);
+//
+//        if (player_type) {
+//            player2.Name = "Computer";
+//        } else {
+//            player2.Name = InputUserName ();
+//        }
 
         Loop ();
 
@@ -43,17 +50,17 @@ void Game::Start () {
 // End of the Game
     }
 
-}
+
 
 
 std::string Game::InputUserName () {
     std::cout << "Enter User name running and returns a string Dmitry" << std::endl;
-    return std::string ("Dmitry");
+    return "Dmitry";
 }
 
 std::string Game::LoadDataBase(){
     std::cout << "DataBase" << std::endl;
-    return std::string ("Database");
+    return "Database";
 }
 
  void Game:: FindPlayer(){
@@ -67,10 +74,10 @@ std::string Game::LoadDataBase(){
      std::cout<<"isPlayAgain";
      return true;
  }
-void Loop(){
-    std::cout<<"Loop";
+void Game::Loop(){
+    std::cout<<"Loop" << std::endl;
 }
-bool is_playing(){
-    std::cout<<"is_playing";
+bool Game::is_playing(){
+    std::cout<<"is_playing" << std::endl;
     return true;
 }
