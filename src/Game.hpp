@@ -15,8 +15,7 @@ public:
     void FindPlayer();
     char GetOpponentType();
     bool IsPlayAgain();
-    void Loop();
-    bool is_playing();
+     bool is_playing();
     
 
 

@@ -23,11 +23,8 @@ void Game::Start () {
     std::string name = InputUserName ();
 //
     auto db = LoadDataBase ();
-    HumanPlayer Player1;
-    AIPlayer Player2;
 
-    std::cout << Player1.engageMove() << std::endl;
-    std::cout << Player2.engageMove() << std::endl;
+
 
 
 //    Player player1 = FindPlayer (db, name);

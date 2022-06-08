@@ -13,7 +13,7 @@ class Player { //Define as abstract class
 public:
     Player ();
 
-    virtual int engageMove () = 0;
+    virtual int engageMove () = 0; // Define as pure virtual function - abstract class
 
     std::string getName ();
 
