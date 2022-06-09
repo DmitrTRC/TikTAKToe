@@ -26,8 +26,8 @@ public:
 private:
     std::string Name_;
     int Score_;
-    std::string Password;
-    int rating;
+    std::string Password_;
+    int rating_;
 };
 
 class HumanPlayer : public Player {
