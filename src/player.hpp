@@ -18,6 +18,10 @@ public:
     std::string getName ();
     virtual void WhoFirst() = 0;
     virtual void setName (std::string name);
+    virtual void setPassword (std::string password);
+    std::string getPassword ();
+    
+    
 
 private:
     std::string Name_;
