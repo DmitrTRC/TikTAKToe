@@ -42,3 +42,11 @@ int AIPlayer::engageMove () {
     int move = 5;
     return move;
 }
+
+void HumanPlayer::WhoFirst (){
+    std::cout<<"HumanPlayer WhoFirst is running"<<std::endl;
+}
+
+void AIPlayer::WhoFirst (){
+    std::cout<<"AIPlayerWhoFirst is running"<<std::endl;
+}
