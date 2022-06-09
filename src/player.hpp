@@ -14,14 +14,16 @@ public:
     Player ();
 
     virtual int engageMove () = 0; // Define as pure virtual function - abstract class
-
+       
     std::string getName ();
-
-    void setName (std::string name);
+    virtual void WhoFirst();
+    virtual void setName (std::string name);
 
 private:
     std::string Name_;
     int Score_;
+    std::string Password;
+    int rating;
 };
 
 class HumanPlayer : public Player {
@@ -31,6 +33,7 @@ public:
 //~HumanPlayer ();
 
     int engageMove () override;
+    void WhoFirst() override;
 };
 
 class AIPlayer : public Player {
@@ -40,6 +43,7 @@ public:
 //    ~AIPlayer ();
 
     int engageMove () override;
+    void WhoFirst() override;
 };
 
 #endif //TIKTAKTOE_PLAYER_HPP
