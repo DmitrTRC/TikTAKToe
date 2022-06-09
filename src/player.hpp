@@ -16,7 +16,7 @@ public:
     virtual int engageMove () = 0; // Define as pure virtual function - abstract class
        
     std::string getName ();
-    virtual void WhoFirst();
+    virtual void WhoFirst() = 0;
     virtual void setName (std::string name);
 
 private:
