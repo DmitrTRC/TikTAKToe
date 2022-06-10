@@ -22,10 +22,10 @@ void Player::setName (std::string name) {
     Name_ = name;
 }
 std::string Player::getPassword(){
-    return password_;
+    return Password_;
 }
 void Player::setPassword(std::string password){
-    password_=password;
+    Password_=password;
 }
 
 
