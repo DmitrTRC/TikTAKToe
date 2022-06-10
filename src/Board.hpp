@@ -13,14 +13,18 @@ public:
     Board ();
 
     void setPosition (int position, char mark);
+
     void PrintBoard ();
-    void ClearBoard ();
+
+    void Clear ();
+
     bool isFull ();
+
     bool isFree (int position);
 
     static const int k_board_size = {9}; // Board size
 private:
-    std::array<char, k_board_size + 1> Board_; // +1 for indexing from 1 to 9
+    std::array<char, k_board_size + 1> positions_; // +1 for indexing from 1 to 9
 
 };
 
