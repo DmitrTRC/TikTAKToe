@@ -3,12 +3,13 @@ project(${CMAKE_PROJECT_NAME}_lib)
 set(HEADER_FILES
         Game.hpp
         player.hpp
+        Board.hpp
         )
 
 set(SOURCE_FILES
         Game.cpp
         player.cpp
-        )
+        Board.cpp )
 
 #set(SOURCE_FILES $(SOURCE_FILES))
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")
