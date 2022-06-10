@@ -6,6 +6,7 @@
 #define TICTAC_BOARD_HPP
 
 #include <array>
+#include <set>
 
 
 class Board {
@@ -25,6 +26,7 @@ public:
     static const int k_board_size = {9}; // Board size
 private:
     std::array<char, k_board_size + 1> positions_; // +1 for indexing from 1 to 9
+    std::set<int> available_positions_;
 
 };
 
