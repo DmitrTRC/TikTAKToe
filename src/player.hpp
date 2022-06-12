@@ -16,6 +16,7 @@ public:
     virtual int engageMove () = 0; // Define as pure virtual function - abstract class
        
     std::string getName ();
+    //TODO: Add Property Mark_ and setter and getter for it. Than set 'X' if first player and 'O' if second player
     virtual void WhoFirst() = 0;
     virtual void setName (std::string name);
     virtual void setPassword (std::string password);
