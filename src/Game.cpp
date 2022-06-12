@@ -2,7 +2,7 @@
 // Created by Dmitry Morozov on 28/5/22.
 //
 #include <iostream>
-
+#include <stdlib.h>
 #include "Game.hpp"
 #include "player.hpp"
 
@@ -77,4 +77,8 @@ void Game::Loop(){
 bool Game::is_playing(){
     std::cout<<"is_playing" << std::endl;
     return true;
+}
+int Game::GetFirstPlayer(){
+    srand(time(0));
+    return rand()%2;
 }
