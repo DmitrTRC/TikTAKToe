@@ -9,7 +9,7 @@ set(HEADER_FILES
 set(SOURCE_FILES
         Game.cpp
         player.cpp
-        Board.cpp )
+        Board.cpp namespaces.cpp)
 
 #set(SOURCE_FILES $(SOURCE_FILES))
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")

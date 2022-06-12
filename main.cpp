@@ -5,12 +5,12 @@
 
 
 #include "Game.hpp"
+#include "namespaces.cpp"
 
 //TODO: Implement class Game
 
 int main () {
 
-    //Show logo ?
     Game game;
     game.Start ();
 
