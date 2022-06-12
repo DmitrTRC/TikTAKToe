@@ -8,8 +8,11 @@
 
 
 Board::Board () {
+
+    available_positions_ = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     Clear ();
 }
+
 
 void Board::PrintBoard () {
     const std::string horizontal_line = "---+---+---";
@@ -28,7 +31,6 @@ void Board::PrintBoard () {
               << std::endl;
 
 }
-
 
 
 bool Board::isFree (int position) {
