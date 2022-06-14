@@ -25,11 +25,11 @@ void Board::ClearBoard () {
 //FIX:  ( Replace True with true)
 bool Board::isFull () {
     std::cout << "IsFull";
-    return True;
+    return true;
 }
 
 //FIX:  ( Replace True with true)
 bool Board::isFree (int position) {
     std::cout << "IsFree";
-    return True;
+    return true;
 }
