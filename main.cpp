@@ -5,7 +5,7 @@
 
 
 #include "Game.hpp"
-#include "namespaces.cpp"
+
 
 //TODO: Implement class Game
 

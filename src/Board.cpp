@@ -22,13 +22,13 @@ void Board::ClearBoard () {
     std::cout << "ClearBoard" << std::endl;
 }
 
-//FIX:  ( Replace True with true)
+
 bool Board::isFull () {
     std::cout << "IsFull";
     return true;
 }
 
-//FIX:  ( Replace True with true)
+
 bool Board::isFree (int position) {
     std::cout << "IsFree";
     return true;
