@@ -79,7 +79,7 @@ bool Game::is_playing(){
     return true;
 }
 // TODO: Fix the code below ( Wrong method name)
-int Game::GetFirstPlayer(){
+int Game::getFirstPlayer(){
     srand(time(0));
     return rand()%2;
 }
