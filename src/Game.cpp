@@ -78,6 +78,7 @@ bool Game::is_playing(){
     std::cout<<"is_playing" << std::endl;
     return true;
 }
+// TODO: Fix the code below ( Wrong method name)
 int Game::GetFirstPlayer(){
     srand(time(0));
     return rand()%2;
