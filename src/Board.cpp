@@ -10,14 +10,17 @@ Board::Board () {
 
 }
 
+//TODO: Implement method
 void Board::setPosition (int position, char mark) {
     std::cout << "SetPosition" << std::endl;
 }
 
+//TODO: Implement method
 void Board::PrintBoard () {
     std::cout << "PrintBoard" << std::endl;
 }
 
+//TODO: Implement method
 void Board::ClearBoard () {
     std::cout << "ClearBoard" << std::endl;
 }
