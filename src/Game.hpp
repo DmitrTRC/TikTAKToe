@@ -32,6 +32,9 @@ private:
     int current_player_; // index of current player
     Board board_; // game board
 
+    bool isWinner();
+    Player& getCurrentPlayer();
+
     void Loop ();
 };
 

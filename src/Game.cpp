@@ -43,6 +43,27 @@ void Game::Start () {
     }
 }
 
+bool Game::isWinner () {
+    bool isWinner = true;
+    std::array<char, 10> positions = {'#', 'X', 'X', ' ', ' ',
+                                      'X', ' ', 'X', 'O', 'X'};
+    for (auto &combination: board_.getWinningCombinations ()) {
+        for (auto &cell: combination) {
+            if (positions[cell] != getCurrentPlayer().getMark()) {
+                isWinner = false;
+                break;
+            }
+
+        }
+        if (isWinner) break;
+
+    }
+
+    return isWinner;
+}
+Player& Game::getCurrentPlayer () {
+    return *players_[current_player_];
+}
 
 std::string Game::InputUserName (int player_number) {
     std::cout << "Enter User " << player_number << " name : ";
@@ -78,13 +99,14 @@ void Game::Loop () {
     } else {
         std::cout << "Invalid move" << std::endl;
     }
-    if (board_.isWinnwer()) {
+    if (isWinner()) {
         std::cout << "Player " << current_player_ << " wins" << std::endl;
 
     }
     setNextPlayer ();
 
 }
+
 
 bool Game::is_playing () {
     std::cout << "is_playing" << std::endl;

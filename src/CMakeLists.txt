@@ -4,6 +4,7 @@ set(HEADER_FILES
         Game.hpp
         player.hpp
         Board.hpp
+        helper.hpp
         )
 
 set(SOURCE_FILES

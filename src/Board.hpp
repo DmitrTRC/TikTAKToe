@@ -13,6 +13,8 @@ class Board {
 public:
     Board ();
 
+    const std::array<std::array<int, 3>, 8> &getWinningCombinations ();
+
     void setPosition (int position, char mark);
 
     void PrintBoard ();
@@ -27,6 +29,14 @@ public:
 private:
     std::array<char, k_board_size + 1> positions_; // +1 for indexing from 1 to 9
     std::set<int> available_positions_;
+    const std::array<std::array<int, 3>, 8> winning_combinations_ = {{{1, 2, 3},
+                                                                      {4, 5, 6},
+                                                                      {7, 8, 9},
+                                                                      {1, 4, 7},
+                                                                      {2, 5, 8},
+                                                                      {3, 6, 9},
+                                                                      {1, 5, 9},
+                                                                      {3, 5, 7}}};
 
 };
 

@@ -13,6 +13,9 @@ Board::Board () {
     Clear ();
 }
 
+const std::array<std::array<int, 3>, 8> &Board::getWinningCombinations () {
+    return winning_combinations_;
+}
 
 void Board::PrintBoard () {
     const std::string horizontal_line = "---+---+---";
@@ -34,7 +37,7 @@ void Board::PrintBoard () {
 
 
 bool Board::isFree (int position) {
-    return position == ' ';
+    return positions_[position] == ' ';
 }
 
 bool Board::isFull () {

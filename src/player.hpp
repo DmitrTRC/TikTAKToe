@@ -22,6 +22,7 @@ public:
     virtual void setName (std::string name);
     virtual void setPassword (std::string password);
     std::string getPassword ();
+    char getMark ();
     
     
 
@@ -30,6 +31,7 @@ private:
     int Score_;
     std::string Password_;
     int rating_;
+    char mark_;
 };
 
 class HumanPlayer : public Player {
