@@ -14,6 +14,12 @@ Player::Player () {
     Name_ = "Unknown";
 }
 
+HumanPlayer::HumanPlayer (std::string name) {
+    std::cout << "class Player constructor is running" << std::endl;
+    setName (name);
+
+}
+
 std::string Player::getName () {
     return Name_;
 }

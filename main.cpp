@@ -6,11 +6,11 @@
 
 #include "Game.hpp"
 
+
 //TODO: Implement class Game
 
 int main () {
 
-    //Show logo ?
     Game game;
     game.Start ();
 
