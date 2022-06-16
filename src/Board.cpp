@@ -34,6 +34,12 @@ void Board::PrintBoard () {
 //TODO: Implement method
 void Board::ClearBoard () {
     std::cout << "ClearBoard" << std::endl;
+    std::cout << string( 100, '\n' );
+    std::cout << "   |    | \n ";
+    std::cout << "--|----|-- \n";
+    std:: cout << "   |    | \n ";
+    std:: cout << "--|----|-- \n";
+    std::cout << "   |    | \n ";
 }
 
 
