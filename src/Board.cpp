@@ -13,11 +13,22 @@ Board::Board () {
 //TODO: Implement method
 void Board::setPosition (int position, char mark) {
     std::cout << "SetPosition" << std::endl;
+    if (mark == 'x'){
+         Board_[position] = mark;
+          }
+	else
+	{ 
+        Board_[position] = mark; 
+    }
 }
 
 //TODO: Implement method
 void Board::PrintBoard () {
-    std::cout << "PrintBoard" << std::endl;
+    std::cout << "   |    | \n ";
+    std::cout << "--|----|-- \n";
+    std:: cout << "   |    | \n ";
+    std:: cout << "--|----|-- \n";
+    std::cout << "   |    | \n ";
 }
 
 //TODO: Implement method
