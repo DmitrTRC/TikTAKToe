@@ -71,7 +71,19 @@ bool Game::IsPlayAgain () {
 }
 
 void Game::Loop () {
-    std::cout << "Loop" << std::endl;
+    std::cout << "Game Loop" << std::endl;
+    int cur_move = players_[current_player_]->engageMove ();
+    if (board_.isFree (cur_move)){
+        //TODO: Set the move in the board
+    } else {
+        std::cout << "Invalid move" << std::endl;
+    }
+    if (board_.isWinnwer()) {
+        std::cout << "Player " << current_player_ << " wins" << std::endl;
+
+    }
+    setNextPlayer ();
+
 }
 
 bool Game::is_playing () {
@@ -82,4 +94,11 @@ bool Game::is_playing () {
 
 int Game::getFirstPlayer () {
     return rand () % 2; // Native C function to generate random number
+}
+
+
+
+void Game::setNextPlayer () { //current_player ( 0 or 1 )
+    current_player_ = 1 - current_player_;
+
 }

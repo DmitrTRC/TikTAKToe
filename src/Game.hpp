@@ -3,6 +3,7 @@
 #define TIKTAKTOE_GAME_HPP
 
 #include <vector>
+#include "Board.hpp"
 #include "player.hpp"
 
 //TODO: Add method int getFirstPlayer() to class Game. So that it can return index of first player.
@@ -18,6 +19,7 @@ public:
     bool IsPlayAgain();
     bool is_playing();
     int getFirstPlayer();
+    void setNextPlayer();
     
 
 
@@ -28,6 +30,7 @@ private:
     std::string LoadDataBase();
     std::string InputUserName (int); // function to get user name
     int current_player_; // index of current player
+    Board board_; // game board
 
     void Loop ();
 };
