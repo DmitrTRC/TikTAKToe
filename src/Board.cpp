@@ -10,19 +10,19 @@ Board::Board () {
 
 }
 
-//TODO: Implement method
+//FIXME: Implement class Board
 void Board::setPosition (int position, char mark) {
     std::cout << "SetPosition" << std::endl;
     if (mark == 'x'){
-         Board_[position] = mark;
+        positions_[position] = mark;
           }
 	else
-	{ 
-        Board_[position] = mark; 
+	{
+        positions_[position] = mark;
     }
 }
 
-//TODO: Implement method
+//TODO: Draw the board with the current state of the game
 void Board::PrintBoard () {
     std::cout << "   |    | \n ";
     std::cout << "--|----|-- \n";
@@ -32,14 +32,14 @@ void Board::PrintBoard () {
 }
 
 //TODO: Implement method
-void Board::ClearBoard () {
-    std::cout << "ClearBoard" << std::endl;
-    std::cout << string( 100, '\n' );
-    std::cout << "   |    | \n ";
-    std::cout << "--|----|-- \n";
-    std:: cout << "   |    | \n ";
-    std:: cout << "--|----|-- \n";
-    std::cout << "   |    | \n ";
+void Board::ClearBoard () { // Fill positions with empty characters
+//    std::cout << "ClearBoard" << std::endl;
+//    std::cout << string( 100, '\n' );
+//    std::cout << "   |    | \n ";
+//    std::cout << "--|----|-- \n";
+//    std:: cout << "   |    | \n ";
+//    std:: cout << "--|----|-- \n";
+//    std::cout << "   |    | \n ";
 }
 
 
