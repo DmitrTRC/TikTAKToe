@@ -78,7 +78,7 @@ void Game::Loop () {
     } else {
         std::cout << "Invalid move" << std::endl;
     }
-    if (board_.isWinnwer()) {
+    if (isWinner()) {
         std::cout << "Player " << current_player_ << " wins" << std::endl;
 
     }
