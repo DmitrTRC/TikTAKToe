@@ -29,7 +29,7 @@ void Board::PrintBoard (positions_) {
 }
 
 //TODO: Implement method
-void Board::ClearBoard () { // Fill positions with empty characters
+void Board::ClearBoard (positions_) { // Fill positions with empty characters
 //    
     for (int i=0;i<positions_.size();i++){
         positions_[i]=' ';
