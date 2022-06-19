@@ -37,13 +37,13 @@ void Board::ClearBoard (positions_) { // Fill positions with empty characters
     }
 }
 
-
+//TODO: Implement method
 bool Board::isFull () {
     std::cout << "IsFull";
     return true;
 }
 
-
+//TODO: Implement method
 bool Board::isFree (int position) {
     std::cout << "IsFree";
     return true;
