@@ -20,6 +20,7 @@ public:
     bool is_playing();
     int getFirstPlayer();
     void setNextPlayer();
+    bool isWinner(){};
     
 
 
