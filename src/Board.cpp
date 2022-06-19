@@ -18,7 +18,7 @@ void Board::setPosition (int position, char mark) {
 
 //TODO: Draw the board with the current state of the game
 //FIXME: positions_ : Member of class Board!
-void Board::PrintBoard (positions_) { // Look at method declaration!  void Board::PrintBoard ()
+void Board::PrintBoard () { // Look at method declaration!  void Board::PrintBoard ()
     cout << "    |     | \n "; //Better way to use std::endl.
     cout << positions_[1] << "  | " <<positions_[2] << "   | " << positions_[3] << " \n";
     cout << " ---|-----|--- \n";
@@ -31,7 +31,7 @@ void Board::PrintBoard (positions_) { // Look at method declaration!  void Board
 
 //TODO: Implement method
 //FIXME: The same issue : positions_ : Member of class Board
-void Board::ClearBoard (positions_) { // Fill positions with empty characters
+void Board::ClearBoard () { // Fill positions with empty characters
 //    
     for (int i=0;i<positions_.size();i++){
         positions_[i]=' ';
@@ -40,12 +40,27 @@ void Board::ClearBoard (positions_) { // Fill positions with empty characters
 
 //TODO: Implement method
 bool Board::isFull () {
-    std::cout << "IsFull";
-    return true;
+    int count=0;
+    for (int i=0;i<board.size();i++){
+        if (board[i]!=' ')
+        count+=1;
+    }
+    if (count!=0){
+    return false;
+        
+    }
+    else {
+        return true;
+    }
+   }
 }
 
 //TODO: Implement method
 bool Board::isFree (int position) {
-    std::cout << "IsFree";
-    return true;
+    for (int i=0;i<positions_.size();i++){
+        if (positions[position_]==' ')
+        return true;
+        else
+            return false;
+    }
 }
