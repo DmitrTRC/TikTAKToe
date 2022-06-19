@@ -17,7 +17,7 @@ void Board::setPosition (int position, char mark) {
 }
 
 //TODO: Draw the board with the current state of the game
-//FIXME: Fix arguments type
+//FIXME: positions_ : Member of class Board!
 void Board::PrintBoard (positions_) {
     cout << "    |     | \n ";
     cout << positions_[1] << "  | " <<positions_[2] << "   | " << positions_[3] << " \n";
@@ -30,6 +30,7 @@ void Board::PrintBoard (positions_) {
 }
 
 //TODO: Implement method
+//FIXME: The same issue : positions_ : Member of class Board
 void Board::ClearBoard (positions_) { // Fill positions with empty characters
 //    
     for (int i=0;i<positions_.size();i++){
