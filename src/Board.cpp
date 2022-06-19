@@ -17,6 +17,7 @@ void Board::setPosition (int position, char mark) {
 }
 
 //TODO: Draw the board with the current state of the game
+//FIXME: Fix arguments type
 void Board::PrintBoard (positions_) {
     cout << "    |     | \n ";
     cout << positions_[1] << "  | " <<positions_[2] << "   | " << positions_[3] << " \n";
