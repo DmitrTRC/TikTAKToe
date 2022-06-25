@@ -19,14 +19,17 @@ void Board::setPosition (int position, char mark) {
 
 void Board::PrintBoard () { // Ok! Everything is correct
     //TODO: Refactor this way to make it more readable
-    std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
+       
+ std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
     std::cout << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << " \n";
-    std::cout << " ---|-----|--- \n";
+    std::cout << " ---|-----|--- "<<std::endl;
     std::cout << " " << positions_[4] << "  |" << positions_[5] << "    |" << positions_[6] << " \n";
-    std::cout << "    |     | \n ";
-    std::cout << "---|-----|---  \n";
+    std::cout << "    |     |  "<<std::endl;
+    std::cout << " ---|-----|---  "<<std::endl;
     std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << " \n";
-    std::cout << "    |     | \n ";
+    std::cout << "    |     |"<<std::endl;
+    return 0;
+
 }
 
 
@@ -57,10 +60,5 @@ bool Board::isFull () {
 
 //TODO: Refactor
 bool Board::isFree (int position) {
-
-    if (positions_[position] == ' ')
-        return true;
-    else
-        return false;
-    //return positions_[position] == ' ';
+    return positions_[position] == ' ';
 }
