@@ -19,15 +19,17 @@ void Board::setPosition (int position, char mark) {
 
 void Board::PrintBoard () { // Ok! Everything is correct
     //TODO: Refactor this way to make it more readable
-       
- std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
+    //FIXME: You can not return int from void function!
+    //FIXME: Still has " \n" at the end of strings! (Replace to endl )
+
+    std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
     std::cout << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << " \n";
-    std::cout << " ---|-----|--- "<<std::endl;
+    std::cout << " ---|-----|--- " << std::endl;
     std::cout << " " << positions_[4] << "  |" << positions_[5] << "    |" << positions_[6] << " \n";
-    std::cout << "    |     |  "<<std::endl;
-    std::cout << " ---|-----|---  "<<std::endl;
+    std::cout << "    |     |  " << std::endl;
+    std::cout << " ---|-----|---  " << std::endl;
     std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << " \n";
-    std::cout << "    |     |"<<std::endl;
+    std::cout << "    |     |" << std::endl;
     return 0;
 
 }
@@ -46,7 +48,7 @@ void Board::ClearBoard () { // Fill positions with empty characters
 bool Board::isFull () {
     for (const auto &i: positions_) {
 
-        if (i != ' ') {
+        if (i != ' ') { //FIXME: Check the logic!
             return false;
         }
     }
@@ -58,7 +60,8 @@ bool Board::isFull () {
 }
 
 
-//TODO: Refactor
+
+//Correct!
 bool Board::isFree (int position) {
     return positions_[position] == ' ';
 }
