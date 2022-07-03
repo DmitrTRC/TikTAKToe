@@ -10,7 +10,7 @@ Board::Board () {
 
 }
 
-
+//TODO: just test
 void Board::setPosition (int position, char mark) {
     std::cout << "SetPosition" << std::endl;
     positions_[position] = mark;
