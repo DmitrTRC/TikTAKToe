@@ -30,7 +30,7 @@ void Board::PrintBoard () { // Ok! Everything is correct
     std::cout << " ---|-----|---  " << std::endl;
     std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << " \n";
     std::cout << "    |     |" << std::endl;
-    return 0;
+
 
 }
 
