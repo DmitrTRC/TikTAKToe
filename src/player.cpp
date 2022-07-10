@@ -27,12 +27,7 @@ std::string Player::getName () {
 void Player::setName (std::string name) {
     Name_ = name;
 }
-std::string Player::getPassword(){
-    return Password_;
-}
-void Player::setPassword(std::string password){
-    Password_=password;
-}
+
 
 
 int HumanPlayer::engageMove () {

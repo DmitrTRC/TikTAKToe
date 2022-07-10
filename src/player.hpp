@@ -15,21 +15,20 @@ public:
 
 
     virtual int engageMove () = 0; // Define as pure virtual function - abstract class
-       
+
     std::string getName ();
+
     //TODO: Add Property Mark_ and setter and getter for it. Than set 'X' if first player and 'O' if second player
-    virtual void WhoFirst() = 0;
+    virtual void WhoFirst () = 0;
+
     virtual void setName (std::string name);
-    virtual void setPassword (std::string password);
-    std::string getPassword ();
+
     char getMark ();
-    
-    
+
 
 private:
     std::string Name_;
     int Score_;
-    std::string Password_;
     int rating_;
     char mark_;
 };
@@ -42,7 +41,8 @@ public:
 //~HumanPlayer ();
 
     int engageMove () override;
-    void WhoFirst() override;
+
+    void WhoFirst () override;
 };
 
 class AIPlayer : public Player {
@@ -52,7 +52,8 @@ public:
 //    ~AIPlayer ();
 
     int engageMove () override;
-    void WhoFirst() override;
+
+    void WhoFirst () override;
 };
 
 #endif //TIKTAKTOE_PLAYER_HPP
