@@ -17,18 +17,18 @@ void Board::setPosition (int position, char mark) {
 }
 
 
-void Board::PrintBoard () { // Ok! Everything is correct
+int Board::PrintBoard () { // Ok! Everything is correct
     //TODO: Refactor this way to make it more readable
     //FIXME: You can not return int from void function!
     //FIXME: Still has " \n" at the end of strings! (Replace to endl )
 
     std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
-    std::cout << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << " \n";
+    std::cout << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << std::endl;
     std::cout << " ---|-----|--- " << std::endl;
-    std::cout << " " << positions_[4] << "  |" << positions_[5] << "    |" << positions_[6] << " \n";
+    std::cout << " " << positions_[4] << "  |" << positions_[5] << "    |" << positions_[6] << std::endl;
     std::cout << "    |     |  " << std::endl;
     std::cout << " ---|-----|---  " << std::endl;
-    std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << " \n";
+    std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << std::endl;
     std::cout << "    |     |" << std::endl;
 
 
@@ -49,11 +49,11 @@ bool Board::isFull () {
     for (const auto &i: positions_) {
 
         if (i != ' ') { //FIXME: Check the logic!
-            return false;
+            return true;
         }
     }
 
-    return true;
+    return false;
 
 
 //    return std::any_of (positions_.begin (), positions_.end (), [] (char c) { return c == ' '; });
