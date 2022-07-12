@@ -42,7 +42,19 @@ void Game::Start () {
 // End of the Game
     }
 }
+int Game::InputNextMove () {
+    int number;
+    std::cout << "Input an integer number in range 1 to 9\n";
 
+    while ((!(std::cin >> number)) || (number > 9 || number < 1)) {
+
+        std::cin.clear ();
+        std::cin.ignore (5000, '\n');
+
+    }
+
+    return static_cast<int>(number);
+}
 bool Game::isWinner () {
     bool isWinner = true;
     std::array<char, 10> positions = {'#', 'X', 'X', ' ', ' ',
