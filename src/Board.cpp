@@ -16,9 +16,9 @@ void Board::setPosition (int position, char mark) {
     positions_[position] = mark;
 }
 
-//FIXME: Check return type of this function
-//FIXME: Replace repaeating code for vertical and horizontal lines with variables
-//TODO: Test codee before submitting to git hub
+//FIXME: Check scope resolution operator for std::string
+//TODO: Change var names to be more descriptive ( str, str1 )
+//TODO: Test code before submitting to git hub!!!
 void Board::PrintBoard () { // Ok! Everything is correct
 
     string str= " ---|-----|--- ";
