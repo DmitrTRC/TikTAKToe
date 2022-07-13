@@ -21,20 +21,18 @@ void Board::setPosition (int position, char mark) {
 //TODO: Test code before submitting to git hub!!!
 void Board::PrintBoard () { // Ok! Everything is correct
 
-    string str= " ---|-----|--- ";
-    string str1="    |     | ";
-    
-    
-    
+    string str = " ---|-----|--- ";
+    string str1 = "    |     | ";
+
+
     std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
-    std::cout <<" " <<positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << std::endl;
-    std::cout << str<< std::endl;
+    std::cout << " " << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << std::endl;
+    std::cout << str << std::endl;
     std::cout << " " << positions_[4] << "  |" << positions_[5] << "    |" << positions_[6] << std::endl;
-    std::cout << str1<< std::endl;
-    std::cout << str<< std::endl;
+    std::cout << str1 << std::endl;
+    std::cout << str << std::endl;
     std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << std::endl;
-    std::cout << str1<< std::endl;
-    
+    std::cout << str1 << std::endl;
 
 
 }
@@ -50,6 +48,12 @@ void Board::ClearBoard () { // Fill positions with empty characters
 
 //TODO: Implement method
 
+//TODO: Function must return true if the board is full, false otherwise.
+//Use test board like this:
+//positions_ = {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'}; // Full board : True
+//positions_ = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}; // Empty board : False
+//positions_ = {'X', ' ', ' ', ' ', ' ', ' ', 'X', ' ', ' '}; // Two positions : False
+
 bool Board::isFull () {
     for (const auto &i: positions_) {
 
@@ -63,7 +67,6 @@ bool Board::isFull () {
 
 //    return std::any_of (positions_.begin (), positions_.end (), [] (char c) { return c == ' '; });
 }
-
 
 
 //Correct!
