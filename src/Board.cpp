@@ -10,17 +10,16 @@ Board::Board () {
 
 }
 
-//TODO: just test
+
 void Board::setPosition (int position, char mark) {
     std::cout << "SetPosition" << std::endl;
     positions_[position] = mark;
 }
 
-
+//FIXME: Check return type of this function
+//FIXME: Replace repaeating code for vertical and horizontal lines with variables
+//TODO: Test codee before submitting to git hub
 int Board::PrintBoard () { // Ok! Everything is correct
-    //TODO: Refactor this way to make it more readable
-    //FIXME: You can not return int from void function!
-    //FIXME: Still has " \n" at the end of strings! (Replace to endl )
 
     std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
     std::cout << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << std::endl;
