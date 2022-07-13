@@ -19,16 +19,22 @@ void Board::setPosition (int position, char mark) {
 //FIXME: Check return type of this function
 //FIXME: Replace repaeating code for vertical and horizontal lines with variables
 //TODO: Test codee before submitting to git hub
-int Board::PrintBoard () { // Ok! Everything is correct
+void Board::PrintBoard () { // Ok! Everything is correct
 
+    string str= " ---|-----|--- ";
+    string str1="    |     | ";
+    
+    
+    
     std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
-    std::cout << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << std::endl;
-    std::cout << " ---|-----|--- " << std::endl;
+    std::cout <<" " <<positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << std::endl;
+    std::cout << str<< std::endl;
     std::cout << " " << positions_[4] << "  |" << positions_[5] << "    |" << positions_[6] << std::endl;
-    std::cout << "    |     |  " << std::endl;
-    std::cout << " ---|-----|---  " << std::endl;
+    std::cout << str1<< std::endl;
+    std::cout << str<< std::endl;
     std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << std::endl;
-    std::cout << "    |     |" << std::endl;
+    std::cout << str1<< std::endl;
+    
 
 
 }
