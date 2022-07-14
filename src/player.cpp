@@ -14,7 +14,7 @@ Player::Player () {
     Name_ = "Unknown";
 }
 
-HumanPlayer::HumanPlayer (std::string name) {
+HumanPlayer:: HumanPlayer (const std::string &name) {
     std::cout << "class Player constructor is running" << std::endl;
     setName (name);
 
@@ -28,6 +28,9 @@ void Player::setName (std::string name) {
     Name_ = name;
 }
 
+char Player::getMark () {
+    return mark_;
+}
 
 
 int HumanPlayer::engageMove () {

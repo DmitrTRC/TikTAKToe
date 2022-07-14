@@ -35,7 +35,7 @@ private:
 
 class HumanPlayer : public Player {
 public:
-    HumanPlayer (std::string name);
+    HumanPlayer (const std::string &name);
 //    HumanPlayer ();
 //
 //~HumanPlayer ();
