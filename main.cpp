@@ -12,6 +12,7 @@
 int main () {
 
     Game game;
+    //Point 1. Create a game object. Start the game.
     game.Start ();
 
     return 0;
