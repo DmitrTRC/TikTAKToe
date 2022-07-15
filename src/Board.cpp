@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Board.hpp"
 
+using std::string;
 
 Board::Board () {
     std::cout << "class Board constructor is running" << std::endl;
@@ -21,8 +22,8 @@ void Board::setPosition (int position, char mark) {
 //TODO: Test code before submitting to git hub!!!
 void Board::PrintBoard () { // Ok! Everything is correct
 
-    string str = " ---|-----|--- ";
-    string str1 = "    |     | ";
+    const string str = " ---|-----|--- ";
+    const string str1 = "    |     | ";
 
 
     std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
@@ -53,6 +54,7 @@ void Board::ClearBoard () { // Fill positions with empty characters
 //positions_ = {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'}; // Full board : True
 //positions_ = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}; // Empty board : False
 //positions_ = {'X', ' ', ' ', ' ', ' ', ' ', 'X', ' ', ' '}; // Two positions : False
+//positions_ = {' ', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'}; // Two positions : True
 
 bool Board::isFull () {
     for (const auto &i: positions_) {
