@@ -43,7 +43,7 @@ void Game::Start () {
     }
 }
 int Game::InputNextMove () {
-    int number;
+    int number{0};
     std::cout << "Input an integer number in range 1 to 9\n";
 
     while ((!(std::cin >> number)) || (number > 9 || number < 1)) {
