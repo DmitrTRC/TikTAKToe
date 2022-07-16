@@ -19,11 +19,12 @@ Game::~Game () {
 
 }
 
-//Point 1. Main Game loop. Initialize the game.
+//Point 2. Main Game loop. Initialize the game.
 void Game::Start () {
     std::cout << "Game started" << std::endl;
 
     //Point 3. Create two players. ( Ask for type of player and name of player)
+
     HumanPlayer player1 (InputUserName (1));
     players_.push_back (&player1); // Put player1 address in vector
 
@@ -116,19 +117,18 @@ void Game::Loop () {
     while (game_active) {
 
         std::cout << "Player " << getCurrentPlayer ().getName () << " turn" << std::endl;
-
+        //TODO: DRAW BOARD
         int next_move = getCurrentPlayer ().engageMove (board_);
-
-        if (!board_.makeMove (next_move, getCurrentPlayer ().getMark ())) {
+z
+        if (!board_.setPosition(next_move, getCurrentPlayer ().getMark ())) {
             std::cout << "Invalid move" << std::endl;
             continue;
         }
 
-
         //Point 5.5. Check if the game is over.
         if (isWinner ()) {
             std::cout << "Player " << getCurrentPlayer ().getName () << " won!" << std::endl;
-            getCurrentPlayer ().addWin ();
+            getCurrentPlayer ().addWin (); // Add one win to the player score_
             game_active = false;
         } else if (board_.isFull ()) {
             std::cout << "Draw!" << std::endl;

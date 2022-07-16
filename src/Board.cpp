@@ -13,6 +13,10 @@ Board::Board () {
     Clear ();
 }
 
+bool Board::isValidPosition (int position) {
+    return available_positions_.find (position) != available_positions_.end ();
+}
+
 const std::array<std::array<int, 3>, 8> &Board::getWinningCombinations () {
     return winning_combinations_;
 }
@@ -36,14 +40,24 @@ void Board::PrintBoard () {
 }
 
 
-bool Board::isFree (int position) {
-    return positions_[position] == ' ';
-}
-
 bool Board::isFull () {
-    return std::any_of (positions_.begin (), positions_.end (), [] (char c) { return c == ' '; });
+
+    return available_positions_.empty ();
 }
 
 void Board::Clear () {
     positions_.fill (' ');
+    positions_[0] = '#';
 }
+
+//TODO: Validate move ( position is free, position is valid )
+bool Board::setPosition (int position, char mark) {
+    if (isValidPosition (position)) {
+        positions_[position] = mark;
+        available_positions_.erase (position);
+        return true;
+    }
+    return false;
+}
+
+
