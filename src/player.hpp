@@ -35,12 +35,15 @@ private:
 
 class HumanPlayer : public Player {
 public:
+    HumanPlayer (const std::string &name = "Unknown");
+
     int engageMove (const Board &) override;
 
 };
 
 class AIPlayer : public Player {
 public:
+    AIPlayer (const std::string &name = "Unknown");
     int engageMove (const Board &) override;
 };
 

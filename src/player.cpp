@@ -51,6 +51,11 @@ int HumanPlayer::engageMove (const Board &board) {
     return position;
 }
 
+HumanPlayer::HumanPlayer (const std::string &name) {
+    std::cout << "class HumanPlayer constructor is running" << std::endl;
+    setName(name);
+}
+
 
 int AIPlayer::engageMove (const Board &board) {
     std::cout << "AIPlayer engageMove is running" << std::endl;

@@ -34,17 +34,14 @@ void Game::Start () {
     //Point 4. Set first player.
     current_player_ = getFirstPlayer ();
 
-//    auto db = LoadDataBase ();
+    players_[current_player_]->setMark ('X');
+    players_[(current_player_ + 1) % 2]->setMark ('O');
 
-// Point 5. Start the game loop.
 
-    while (is_playing ()) {
+    do {
         Loop ();
-        // Point 6 Check that the game is still running.
-        IsPlayAgain ();
+    } while (IsPlayAgain ());
 
-    }
-    //Point 7. End the game.
 }
 
 int Game::InputNextMove () {
@@ -91,23 +88,16 @@ std::string Game::InputUserName (int player_number) {
     return name;
 }
 
-std::string Game::LoadDataBase () {
-    std::cout << "DataBase" << std::endl;
-    return "Database";
-}
-
-void Game::FindPlayer () {
-    std::cout << "find player";
-}
-
-char Game::GetOpponentType () {
-    std::cout << "GetOpponentType";
-    return 'X';
-}
 
 bool Game::IsPlayAgain () {
-    std::cout << "isPlayAgain";
-    return true;
+    std::cout << "Do you want to play again? (y/n)";
+    char answer;
+    std::cin >> answer;
+    if (answer == 'y') {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 //Point 5.1. Main game logic loop.
@@ -116,11 +106,13 @@ void Game::Loop () {
 
     while (game_active) {
 
+        board_.PrintBoard ();
+
         std::cout << "Player " << getCurrentPlayer ().getName () << " turn" << std::endl;
-        //TODO: DRAW BOARD
+
         int next_move = getCurrentPlayer ().engageMove (board_);
 
-        if (!board_.setPosition(next_move, getCurrentPlayer ().getMark ())) {
+        if (!board_.setPosition (next_move, getCurrentPlayer ().getMark ())) {
             std::cout << "Invalid move" << std::endl;
             continue;
         }
@@ -136,22 +128,22 @@ void Game::Loop () {
         } else {
             setNextPlayer ();
         }
-        }
     }
+}
 
 
-    bool Game::is_playing () {
-        std::cout << "is_playing" << std::endl;
-        return true;
-    }
+bool Game::is_playing () {
+    std::cout << "is_playing" << std::endl;
+    return true;
+}
 
 
-    int Game::getFirstPlayer () {
-        return rand () % 2; // Native C function to generate random number
-    }
+int Game::getFirstPlayer () {
+    return rand () % 2; // Native C function to generate random number
+}
 
 
-    void Game::setNextPlayer () { //current_player ( 0 or 1 )
-        current_player_ = 1 - current_player_;
+void Game::setNextPlayer () { //current_player ( 0 or 1 )
+    current_player_ = 1 - current_player_;
 
-    }
+}

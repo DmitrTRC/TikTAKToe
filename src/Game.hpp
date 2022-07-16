@@ -20,11 +20,11 @@ public:
 
     char GetOpponentType ();
 
-    bool IsPlayAgain ();
+    static bool IsPlayAgain ();
 
-    bool is_playing ();
+    static bool is_playing ();
 
-    int getFirstPlayer ();
+    static int getFirstPlayer ();
 
     void setNextPlayer ();
 
