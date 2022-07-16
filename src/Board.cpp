@@ -22,18 +22,18 @@ void Board::setPosition (int position, char mark) {
 //TODO: Test code before submitting to git hub!!!
 void Board::PrintBoard () { // Ok! Everything is correct
 
-    const string str = " ---|-----|--- ";
-    const string str1 = "    |     | ";
+    const string horizontal = " ---|-----|--- ";
+    const string vertical = "    |     | ";
 
 
     std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
     std::cout << " " << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << std::endl;
-    std::cout << str << std::endl;
+    std::cout << horizontal << std::endl;
     std::cout << " " << positions_[4] << "  |" << positions_[5] << "    |" << positions_[6] << std::endl;
-    std::cout << str1 << std::endl;
-    std::cout << str << std::endl;
+    std::cout << vertical << std::endl;
+    std::cout << horizontal << std::endl;
     std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << std::endl;
-    std::cout << str1 << std::endl;
+    std::cout << vertical << std::endl;
 
 
 }
@@ -57,7 +57,7 @@ void Board::ClearBoard () { // Fill positions with empty characters
 //positions_ = {' ', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'}; // Two positions : True
 
 bool Board::isFull () {
-    for (const auto &i: positions_) {
+    for (int i=1;i<positions_.size();i++) {
 
         if (i != ' ') { //FIXME: Check the logic!
             return true;
