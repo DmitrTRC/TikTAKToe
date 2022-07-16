@@ -119,7 +119,7 @@ void Game::Loop () {
         std::cout << "Player " << getCurrentPlayer ().getName () << " turn" << std::endl;
         //TODO: DRAW BOARD
         int next_move = getCurrentPlayer ().engageMove (board_);
-z
+
         if (!board_.setPosition(next_move, getCurrentPlayer ().getMark ())) {
             std::cout << "Invalid move" << std::endl;
             continue;
