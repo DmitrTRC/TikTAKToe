@@ -111,37 +111,47 @@ bool Game::IsPlayAgain () {
 
 //Point 5.1. Main game logic loop.
 void Game::Loop () {
+    bool game_active = true;
 
-    //Point 5.2. Get move from current player.
-    int cur_move = players_[current_player_]->engageMove ();
+    while (game_active) {
 
-    //Point 5.3. Validate move.
-    if (board_.isFree (cur_move)) {
-        //TODO: Set the move in the board
-    } else {
-        std::cout << "Invalid move" << std::endl;
+        std::cout << "Player " << getCurrentPlayer ().getName () << " turn" << std::endl;
+
+        int next_move = getCurrentPlayer ().engageMove (board_);
+
+        if (!board_.makeMove (next_move, getCurrentPlayer ().getMark ())) {
+            std::cout << "Invalid move" << std::endl;
+            continue;
+        }
+
+
+        //Point 5.5. Check if the game is over.
+        if (isWinner ()) {
+            std::cout << "Player " << getCurrentPlayer ().getName () << " won!" << std::endl;
+            getCurrentPlayer ().addWin ();
+            game_active = false;
+        } else if (board_.isFull ()) {
+            std::cout << "Draw!" << std::endl;
+            game_active = false;
+        } else {
+            setNextPlayer ();
+        }
+        }
     }
-    if (isWinner ()) {
-        std::cout << "Player " << current_player_ << " wins" << std::endl;
+
+
+    bool Game::is_playing () {
+        std::cout << "is_playing" << std::endl;
+        return true;
+    }
+
+
+    int Game::getFirstPlayer () {
+        return rand () % 2; // Native C function to generate random number
+    }
+
+
+    void Game::setNextPlayer () { //current_player ( 0 or 1 )
+        current_player_ = 1 - current_player_;
 
     }
-    setNextPlayer ();
-
-}
-
-
-bool Game::is_playing () {
-    std::cout << "is_playing" << std::endl;
-    return true;
-}
-
-
-int Game::getFirstPlayer () {
-    return rand () % 2; // Native C function to generate random number
-}
-
-
-void Game::setNextPlayer () { //current_player ( 0 or 1 )
-    current_player_ = 1 - current_player_;
-
-}
