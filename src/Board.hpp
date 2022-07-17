@@ -29,7 +29,7 @@ public:
 
 private:
 
-    std::array<char, k_board_size + 1> positions_; // +1 for indexing from 1 to 9
+    std::array<char, k_board_size + 1> positions_{}; // +1 for indexing from 1 to 9
     std::set<int> available_positions_;
     const std::array<std::array<int, 3>, 8> winning_combinations_ = {{{1, 2, 3},
                                                                       {4, 5, 6},
