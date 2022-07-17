@@ -82,7 +82,7 @@ Player &Game::getCurrentPlayer () {
 }
 
 std::string Game::InputUserName (int player_number) {
-    std::cout << "Enter User " << player_number << " name : ";
+    std::cout << "Enter Player " << player_number << " name : ";
     std::string name;
     std::cin >> name;
     return name;

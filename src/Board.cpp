@@ -50,7 +50,6 @@ void Board::Clear () {
     positions_[0] = '#';
 }
 
-//TODO: Validate move ( position is free, position is valid )
 bool Board::setPosition (int position, char mark) {
     if (isValidPosition (position)) {
         positions_[position] = mark;

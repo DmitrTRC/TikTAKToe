@@ -13,13 +13,6 @@ public:
     Game (); // default constructor
     ~Game ();
 
-    //Todo: Fix! Ты не правильно пишешь реализацию методов в классе Game! Используй scope resolution operator ::
-    void SetSecondPlayer ();
-
-    void FindPlayer ();
-
-    char GetOpponentType ();
-
     static bool IsPlayAgain ();
 
     static bool is_playing ();
@@ -28,12 +21,11 @@ public:
 
     void setNextPlayer ();
 
-
     void Start (); // Game entry point
+
 private:
     bool is_playing_; // flag to check if the game is still running
     std::vector<Player *> players_; // vector of players
-    std::string LoadDataBase ();
 
     int InputNextMove ();
 
