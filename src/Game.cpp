@@ -10,7 +10,7 @@
 Game::Game () {
 
     std::cout << "class Game constructor is running" << std::endl;
-    srand (time (0));
+    srand (time (nullptr));
 
 }
 
@@ -25,10 +25,11 @@ void Game::Start () {
 
     //Point 3. Create two players. ( Ask for type of player and name of player)
 
-    HumanPlayer player1 (InputUserName (1));
+    //FIXME: Refactor this code.
+    HumanPlayer player1 (InputUserName ()); //!!!! No need to pass player number. It is already known.
     players_.push_back (&player1); // Put player1 address in vector
 
-    HumanPlayer player2 (InputUserName (2));
+    HumanPlayer player2 (InputUserName ());
     players_.push_back (&player2);
 
     //Point 4. Set first player.
@@ -44,19 +45,6 @@ void Game::Start () {
 
 }
 
-int Game::InputNextMove () {
-    int number{0};
-    std::cout << "Input an integer number in range 1 to 9\n";
-
-    while ((!(std::cin >> number)) || (number > 9 || number < 1)) {
-
-        std::cin.clear ();
-        std::cin.ignore (5000, '\n');
-
-    }
-
-    return static_cast<int>(number);
-}
 
 bool Game::isWinner () {
     bool isWinner = true;
@@ -81,8 +69,8 @@ Player &Game::getCurrentPlayer () {
     return *players_[current_player_];
 }
 
-std::string Game::InputUserName (int player_number) {
-    std::cout << "Enter Player " << player_number << " name : ";
+std::string Game::InputUserName () {
+    std::cout << "Enter Player name : ";
     std::string name;
     std::cin >> name;
     return name;

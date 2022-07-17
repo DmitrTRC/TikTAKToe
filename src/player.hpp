@@ -9,7 +9,7 @@
 #include "Board.hpp"
 
 
-//TODO: Think about the class Player and its methods and its properties
+//TODO: Separaate the class Player into three classes: Player, HumanPlayer and AIPlayer.
 class Player { //Define as abstract class
 public:
     Player ();
@@ -21,7 +21,7 @@ public:
 
     void setName (const std::string & = "Unknown");
 
-    char getMark ();
+    char getMark () const;
 
     void setMark (char mark);
 
@@ -39,11 +39,15 @@ public:
 
     int engageMove (const Board &) override;
 
+private:
+    static int InputNextMove ();
+
 };
 
 class AIPlayer : public Player {
 public:
     AIPlayer (const std::string &name = "Unknown");
+
     int engageMove (const Board &) override;
 };
 

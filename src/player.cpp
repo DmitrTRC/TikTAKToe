@@ -29,7 +29,7 @@ void Player::setName (const std::string &name) {
     Name_ = name;
 }
 
-char Player::getMark () {
+char Player::getMark () const {
 
     return mark_;
 }
@@ -39,21 +39,21 @@ void Player::setMark (char mark) {
 
 }
 
-//TODO: Implement the method engageMove (const Board &board)
+int HumanPlayer::InputNextMove () {
+    int number{0};
+    std::cout << "Enter your move number from 1 to 9 : ";
+    std::cin >> number;
+    return number;
+}
+
 int HumanPlayer::engageMove (const Board &board) {
-    int position;
-    std::cout << "Enter position: ";
-    std::cin >> position;
-    while (!board.isValidPosition(position)) {
-        std::cout << "Invalid position. Try again: ";
-        std::cin >> position;
-    }
-    return position;
+    return InputNextMove ();
+
 }
 
 HumanPlayer::HumanPlayer (const std::string &name) {
     std::cout << "class HumanPlayer constructor is running" << std::endl;
-    setName(name);
+    setName (name);
 }
 
 

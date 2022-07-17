@@ -27,9 +27,10 @@ private:
     bool is_playing_; // flag to check if the game is still running
     std::vector<Player *> players_; // vector of players
 
-    int InputNextMove ();
 
-    std::string InputUserName (int); // function to get user name
+
+
+    std::string InputUserName (); // function to get user name
     int current_player_; // index of current player
     Board board_; // game board
 
