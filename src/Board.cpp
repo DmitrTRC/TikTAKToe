@@ -59,4 +59,14 @@ bool Board::setPosition (int position, char mark) {
     return false;
 }
 
+bool Board::isWinner () {
+    for (const auto &combination: winning_combinations_) {
+        if (positions_[combination[0]] == positions_[combination[1]] &&
+            positions_[combination[1]] == positions_[combination[2]] &&
+            positions_[combination[0]] != ' ') {
+            return true;
+        }
+    }
+    return false;
+}
 

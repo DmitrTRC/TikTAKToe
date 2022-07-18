@@ -46,25 +46,6 @@ void Game::Start () {
 }
 
 
-bool Game::isWinner () {
-    bool isWinner = true;
-    std::array<char, 10> positions = {'#', 'X', 'X', ' ', ' ',
-                                      'X', ' ', 'X', 'O', 'X'};
-    for (auto &combination: board_.getWinningCombinations ()) {
-        for (auto &cell: combination) {
-            if (positions[cell] != getCurrentPlayer ().getMark ()) {
-                isWinner = false;
-                break;
-            }
-
-        }
-        if (isWinner) break;
-
-    }
-
-    return isWinner;
-}
-
 Player &Game::getCurrentPlayer () {
     return *players_[current_player_];
 }
@@ -106,8 +87,9 @@ void Game::Loop () {
         }
 
         //Point 5.5. Check if the game is over.
-        if (isWinner ()) {
+        if (board_.isWinner ()) {
             std::cout << "Player " << getCurrentPlayer ().getName () << " won!" << std::endl;
+            board_.PrintBoard ();
             getCurrentPlayer ().addWin (); // Add one win to the player score_
             game_active = false;
         } else if (board_.isFull ()) {

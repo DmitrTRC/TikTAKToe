@@ -25,6 +25,8 @@ public:
 
     bool isValidPosition (int position);
 
+    bool isWinner ();
+
     static const int k_board_size = {9}; // Board size
 
 private:
@@ -39,6 +41,7 @@ private:
                                                                       {3, 6, 9},
                                                                       {1, 5, 9},
                                                                       {3, 5, 7}}};
+
 
 };
 
