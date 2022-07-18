@@ -57,9 +57,27 @@ HumanPlayer::HumanPlayer (const std::string &name) {
 }
 
 
+// Calculate the best move for the AI player.
 int AIPlayer::engageMove (const Board &board) {
-    std::cout << "AIPlayer engageMove is running" << std::endl;
-    int move = 5;
-    return move;
+    int best_move{0};
+    int best_score{0};
+    for (int i{0}; i < 9; i++) {
+        if (board.isValidPosition(i)) {
+            Board board_copy{board};
+            board_copy.setPosition (i, getMark ());
+            int score{board_copy.getScore ()};
+            if (score > best_score) {
+                best_score = score;
+                best_move = i;
+            }
+        }
+    }
+
+}
+
+AIPlayer::AIPlayer (const std::string &name) {
+    std::cout << "class AIPlayer constructor is running" << std::endl;
+    setName (name);
+
 }
 

@@ -7,7 +7,6 @@
 #include "player.hpp"
 
 
-//TODO: Add method int getFirstPlayer() to class Game. So that it can return index of first player.
 class Game {
 public:
     Game (); // default constructor
@@ -24,14 +23,14 @@ public:
     void Start (); // Game entry point
 
 private:
-    bool is_playing_; // flag to check if the game is still running
+    bool is_playing_{}; // flag to check if the game is still running
     std::vector<Player *> players_; // vector of players
 
 
 
 
     std::string InputUserName (); // function to get user name
-    int current_player_; // index of current player
+    int current_player_{}; // index of current player
     Board board_; // game board
 
 

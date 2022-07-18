@@ -25,8 +25,8 @@ void Game::Start () {
 
     //Point 3. Create two players. ( Ask for type of player and name of player)
 
-    //FIXME: Refactor this code.
-    HumanPlayer player1 (InputUserName ()); //!!!! No need to pass player number. It is already known.
+
+    HumanPlayer player1 (InputUserName ());
     players_.push_back (&player1); // Put player1 address in vector
 
     HumanPlayer player2 (InputUserName ());

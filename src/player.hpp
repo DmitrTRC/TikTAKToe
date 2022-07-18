@@ -46,7 +46,7 @@ private:
 
 class AIPlayer : public Player {
 public:
-    AIPlayer (const std::string &name = "Unknown");
+    AIPlayer (const std::string &name = "AI Player");
 
     int engageMove (const Board &) override;
 };
