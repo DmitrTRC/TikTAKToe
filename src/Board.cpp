@@ -21,6 +21,7 @@ const std::array<std::array<int, 3>, 8> &Board::getWinningCombinations () {
     return winning_combinations_;
 }
 
+//TODO: Modify this function to show help information about the board.
 void Board::PrintBoard () {
     const std::string horizontal_line = "---+---+---";
     const std::string vertical_line = "|";

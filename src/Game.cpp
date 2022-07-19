@@ -41,6 +41,7 @@ void Game::Start () {
 
     do {
         Loop ();
+        board_.Clear();
     } while (IsPlayAgain ());
 
 }
