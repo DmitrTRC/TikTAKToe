@@ -57,5 +57,3 @@ HumanPlayer::HumanPlayer (const std::string &name) {
 }
 
 
-// Calculate the best move for the AI player.
-

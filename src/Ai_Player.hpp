@@ -5,7 +5,7 @@
 #ifndef TICTAC_AI_PLAYER_HPP
 #define TICTAC_AI_PLAYER_HPP
 
-#include "Player.hpp"
+#include "player.hpp"
 
 
 class AI_Player : public Player {
