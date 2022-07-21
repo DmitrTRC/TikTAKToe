@@ -7,6 +7,12 @@
 
 
 class Result {
+public:
+    void ShowResult();
+    bool LoadDB();
+    bool SaveDB();
+    void ShowScoreTable();
+
 
 };
 
