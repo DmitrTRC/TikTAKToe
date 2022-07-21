@@ -20,20 +20,36 @@ void Board::setPosition (int position, char mark) {
 //FIXME: Check scope resolution operator for std::string
 //TODO: Change var names to be more descriptive ( str, str1 )
 //TODO: Test code before submitting to git hub!!!
+void Board::ShowPrompt(){
+    const string vertical  = " ---|-----|--- ";
+    const string horizontal = "    |     | ";
+
+
+    std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
+    std::cout << " " << "1" << "  | " << "2" << "   | " << "3" << std::endl;
+    std::cout << vertical << std::endl;
+    std::cout << " " << "4" << "  |" << "5" << "    |" << "6" << std::endl;
+    std::cout << horizontal << std::endl;
+    std::cout << vertical << std::endl;
+    std::cout << " " << "7" << "  | " << "8" << "   | " << "9" << std::endl;
+    std::cout << horizontal << std::endl;
+
+
+}
 void Board::PrintBoard () { // Ok! Everything is correct
 
-    const string str = " ---|-----|--- ";
-    const string str1 = "    |     | ";
+    const string vertical  = " ---|-----|--- ";
+    const string horizontal = "    |     | ";
 
 
     std::cout << "    |     |   " << std::endl; //Better way to use std::endl.
     std::cout << " " << positions_[1] << "  | " << positions_[2] << "   | " << positions_[3] << std::endl;
-    std::cout << str << std::endl;
+    std::cout << vertical << std::endl;
     std::cout << " " << positions_[4] << "  |" << positions_[5] << "    |" << positions_[6] << std::endl;
-    std::cout << str1 << std::endl;
-    std::cout << str << std::endl;
+    std::cout << horizontal << std::endl;
+    std::cout << vertical << std::endl;
     std::cout << " " << positions_[7] << "  | " << positions_[8] << "   | " << positions_[9] << std::endl;
-    std::cout << str1 << std::endl;
+    std::cout << horizontal << std::endl;
 
 
 }
