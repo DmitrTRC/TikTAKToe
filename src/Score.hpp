@@ -6,6 +6,7 @@
 #define TICTAC_SCORE_HPP
 
 #include <iostream>
+#include <map>
 
 
 class Score {
@@ -18,6 +19,19 @@ private:
     int wins_;
     int loses_;
     int draws_;
+
+};
+
+class ScoreKeeper {
+public:
+    ScoreKeeper ();
+
+    void addScore (const Score &);
+
+    void printScores ();
+
+private:
+    std::map<std::string, Score> scores_;
 
 };
 
