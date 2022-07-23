@@ -22,13 +22,24 @@ private:
 
 };
 
+std::ostream &operator<< (std::ostream &, const Score &);
+
+
 class ScoreKeeper {
 public:
+
     ScoreKeeper ();
+
+    bool loadScoresFromFile ();
+
+    bool saveScoresToFile ();
 
     void addScore (const Score &);
 
     void printScores ();
+
+
+
 
 private:
     std::map<std::string, Score> scores_;
