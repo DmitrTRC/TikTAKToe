@@ -11,7 +11,14 @@
 
 class Score {
 public:
-    friend std::ostream &operator<< (std::ostream &, const Score &);
+    friend std::ostream &operator<< (std::ostream &os, const Score &score) {
+        os << "Name: " << score.name_ << "\t";
+        os << "Wins: " << score.wins_ << "\t";
+        os << "Loses: " << score.loses_ << "\t";
+        os << "Draws: " << score.draws_ << std::endl;
+        return os;
+
+    };
 
 private:
 
@@ -36,9 +43,11 @@ public:
 
     void addScore (const Score &);
 
-    void printScores ();
-
-
+    void printScores (){
+        std::for_each (scores_.begin(), scores_.end(), [](const std::pair<std::string, Score> &pair) {
+            std::cout << pair.second << std::endl;
+        });
+    };
 
 
 private:
