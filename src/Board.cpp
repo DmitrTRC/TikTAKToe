@@ -7,14 +7,21 @@
 using std::string;
 
 Board::Board () {
-    std::cout << "class Board constructor is running" << std::endl;
+
+    available_positions_ = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Clear ();
 
 }
 
 
-void Board::setPosition (int position, char mark) {
-    std::cout << "SetPosition" << std::endl;
-    positions_[position] = mark;
+
+
+bool Board::isValidPosition (int position) {
+    return available_positions_.find (position) != available_positions_.end ();
+}
+
+const std::array<std::array<int, 3>, 8> &Board::getWinningCombinations () {
+    return winning_combinations_;
 }
 
 //FIXME: Check scope resolution operator for std::string
@@ -55,9 +62,9 @@ void Board::PrintBoard () { // Ok! Everything is correct
 }
 
 
-void Board::ClearBoard () { // Fill positions with empty characters
+void Board::Clear () { // Fill positions with empty characters
 //
-    for (int i = 0; i < positions_.size (); i++) {
+    for (int i = 1; i < positions_.size (); i++) {
         positions_[i] = ' ';
     }
 //    positions_.fill (' ');
@@ -74,20 +81,26 @@ void Board::ClearBoard () { // Fill positions with empty characters
 
 bool Board::isFull () {
     for (const auto &i: positions_) {
-
-        if (i != ' ') { //FIXME: Check the logic!
-            return true;
-        }
+        return std::any_of(positions_.begin(), positions_.end(), [](char c) { return c == ' '; });
     }
+}
 
+bool Board::setPosition (int position, char mark) {
+    if (isValidPosition(position)) {
+        positions_[position] = mark;
+        available_positions_.erase(position);
+        return true;
+    }
     return false;
-
-
-//    return std::any_of (positions_.begin (), positions_.end (), [] (char c) { return c == ' '; });
 }
 
-
-//Correct!
-bool Board::isFree (int position) {
-    return positions_[position] == ' ';
-}
+    bool Board::isWinner() {
+        for (const auto &combination: winning_combinations_) {
+            if (positions_[combination[0]] == positions_[combination[1]] &&
+                positions_[combination[1]] == positions_[combination[2]] &&
+                positions_[combination[0]] != ' ') {
+                return true;
+            }
+        }
+        return false;
+    }

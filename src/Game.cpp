@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Game.hpp"
 #include "player.hpp"
+#include"human.h"
 
 
 Game::Game () {
@@ -38,6 +39,7 @@ void Game::Start () {
 
     do {
         Loop ();
+        board_.Clear();
     } while (IsPlayAgain ());
 
 }

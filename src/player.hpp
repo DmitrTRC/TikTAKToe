@@ -6,51 +6,34 @@
 #define TIKTAKTOE_PLAYER_HPP
 
 #include <iostream>
+#include "Board.hpp"
 
 
-//TODO: Think about the class Player and its methods and its properties
+//TODO: Separaate the class Player into three classes: Player, HumanPlayer and AIPlayer.
 class Player { //Define as abstract class
 public:
     Player ();
 
 
-    virtual int engageMove () = 0; // Define as pure virtual function - abstract class
-       
+    virtual int engageMove (const Board &) = 0;// Define as pure virtual function - abstract class
+    virtual void setPassword(std::string password);
+    std::string getPassword();
     std::string getName ();
-    //TODO: Add Property Mark_ and setter and getter for it. Than set 'X' if first player and 'O' if second player
-    virtual void WhoFirst() = 0;
-    virtual void setName (std::string name);
-    virtual void setPassword (std::string password);
-    std::string getPassword ();
-    
-    
+
+    void setName (const std::string & = "Unknown");
+
+    char getMark () const;
+
+    void setMark (char mark);
+
+    void addWin ();
 
 private:
     std::string Name_;
     int Score_;
-    std::string Password_;
-    int rating_;
+    char mark_;
+    std::string Password_
 };
 
-class HumanPlayer : public Player {
-public:
-    HumanPlayer (std::string name);
-//    HumanPlayer ();
-//
-//~HumanPlayer ();
-
-    int engageMove () override;
-    void WhoFirst() override;
-};
-
-class AIPlayer : public Player {
-public:
-//    AIPlayer ();
-//
-//    ~AIPlayer ();
-
-    int engageMove () override;
-    void WhoFirst() override;
-};
 
 #endif //TIKTAKTOE_PLAYER_HPP
