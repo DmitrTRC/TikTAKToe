@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "Game.hpp"
 #include "player.hpp"
+#include "Score.hpp"
 
 
 Game::Game () {
@@ -41,7 +42,7 @@ void Game::Start () {
 
     do {
         Loop ();
-        board_.Clear();
+        board_.Clear ();
     } while (IsPlayAgain ());
 
 }
@@ -91,7 +92,7 @@ void Game::Loop () {
         if (board_.isWinner ()) {
             std::cout << "Player " << getCurrentPlayer ().getName () << " won!" << std::endl;
             board_.PrintBoard ();
-            getCurrentPlayer ().addWin (); // Add one win to the player score_
+            getCurrentPlayer ().addScore (ScoreType::Win); // Add one win to the player score_
             game_active = false;
         } else if (board_.isFull ()) {
             std::cout << "Draw!" << std::endl;

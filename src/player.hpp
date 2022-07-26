@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "Board.hpp"
+#include "Score.hpp"
 
 
 //TODO: Separaate the class Player into three classes: Player, HumanPlayer and AIPlayer.
@@ -21,21 +22,21 @@ public:
 
     void setName (const std::string & = "Unknown");
 
-    char getMark () const;
+    [[nodiscard]] char getMark () const;
 
     void setMark (char mark);
 
-    void addWin ();
+    void addScore (ScoreType score);
 
 private:
     std::string Name_;
-    int Score_;
+    Score score_;
     char mark_;
 };
 
 class HumanPlayer : public Player {
 public:
-    HumanPlayer (const std::string &name = "Unknown");
+    explicit HumanPlayer (const std::string &name = "Unknown");
 
     int engageMove (const Board &) override;
 

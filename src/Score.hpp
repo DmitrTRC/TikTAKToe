@@ -9,30 +9,36 @@
 #include <map>
 
 
-class Score {
-public:
-    friend std::ostream &operator<< (std::ostream &os, const Score &score) {
-        os << "Name: " << score.name_ << "\t";
-        os << "Wins: " << score.wins_ << "\t";
-        os << "Loses: " << score.loses_ << "\t";
-        os << "Draws: " << score.draws_ << std::endl;
-        return os;
+enum class ScoreType {
+    Win,
+    Lose,
+    Draw
+};
 
-    };
+
+class Score {
+
+
+public:
+    friend std::ostream &operator<< (std::ostream &, const Score &);
+
+    Score ();
+
+    void setScore (const std::string &name, ScoreType score);
+
+    auto getScore ();
 
 private:
-
     std::string name_;
     int wins_;
     int loses_;
     int draws_;
 
+
 };
 
-std::ostream &operator<< (std::ostream &, const Score &);
 
-
-class ScoreKeeper {
+class ScoreKeeper : Score {
 public:
 
     ScoreKeeper ();
@@ -41,10 +47,9 @@ public:
 
     bool saveScoresToFile ();
 
-    void addScore (const Score &);
 
-    void printScores (){
-        std::for_each (scores_.begin(), scores_.end(), [](const std::pair<std::string, Score> &pair) {
+    void printScores () {
+        std::for_each (scores_.begin (), scores_.end (), [] (const std::pair<std::string, Score> &pair) {
             std::cout << pair.second << std::endl;
         });
     };
