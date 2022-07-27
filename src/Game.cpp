@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Game.hpp"
-#include "player.hpp"
+#include "Player.hpp"
 #include "Score.hpp"
 
 

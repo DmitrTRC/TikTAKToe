@@ -34,16 +34,6 @@ private:
     char mark_;
 };
 
-class HumanPlayer : public Player {
-public:
-    explicit HumanPlayer (const std::string &name = "Unknown");
-
-    int engageMove (const Board &) override;
-
-private:
-    static int InputNextMove ();
-
-};
 
 
 #endif //TIKTAKTOE_PLAYER_HPP

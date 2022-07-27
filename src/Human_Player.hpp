@@ -5,8 +5,17 @@
 #ifndef TICTAC_FEATURE_SCORE_HUMAN_PLAYER_HPP
 #define TICTAC_FEATURE_SCORE_HUMAN_PLAYER_HPP
 
+#include "Player.hpp"
 
-class HumanPlayer {
+
+class HumanPlayer : public Player {
+public:
+    explicit HumanPlayer (const std::string &name = "Unknown");
+
+    int engageMove (const Board &) override;
+
+private:
+    int InputNextMove ();
 
 };
 

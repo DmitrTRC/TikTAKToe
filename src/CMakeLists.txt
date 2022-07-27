@@ -2,16 +2,21 @@ project(${CMAKE_PROJECT_NAME}_lib)
 
 set(HEADER_FILES
         Game.hpp
-        player.hpp
+        Player.hpp
         Board.hpp
         helper.hpp
+        Ai_Player.hpp
+        Score.hpp
+        Human_Player.hpp
         )
 
 set(SOURCE_FILES
         Game.cpp
-        player.cpp
+        Player.cpp
         Board.cpp
-        Ai_Player.cpp Ai_Player.hpp Score.cpp Score.hpp Human_Player.cpp Human_Player.hpp)
+        Ai_Player.cpp
+        Score.cpp
+        Human_Player.cpp )
 
 #set(SOURCE_FILES $(SOURCE_FILES))
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")

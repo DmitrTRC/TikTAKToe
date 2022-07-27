@@ -4,7 +4,7 @@
 
 #include <vector>
 #include "Board.hpp"
-#include "player.hpp"
+#include "Player.hpp"
 
 
 class Game {

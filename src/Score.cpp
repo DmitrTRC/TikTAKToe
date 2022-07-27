@@ -5,6 +5,7 @@
 #include "Score.hpp"
 
 
+
 std::ostream &operator<< (std::ostream &os, const Score &score) {
     os << "Name: " << score.name_ << std::endl;
     os << "Wins: " << score.wins_ << std::endl;

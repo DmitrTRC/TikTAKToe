@@ -7,8 +7,8 @@
 
 #include <iostream>
 #include <map>
-#include "player.hpp"
-
+#include "Player.hpp"
+#include "Human_Player.hpp"
 
 
 enum class ScoreType {
@@ -57,8 +57,9 @@ public:
     };
 
 
+
 private:
-    std::map<HumanPlayer , Score> scores_;
+    std::map< std::string, Score> scores_;
 };
 
 
