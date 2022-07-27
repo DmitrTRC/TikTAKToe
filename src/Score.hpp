@@ -47,7 +47,7 @@ public:
 
     void loadScoresFromFile ();
 
-    bool saveScoresToFile ();
+    void saveScoresToFile ();
 
     void addScore (const std::string &name, ScoreType score);
 

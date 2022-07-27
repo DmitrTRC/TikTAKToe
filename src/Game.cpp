@@ -43,6 +43,7 @@ void Game::Start () {
 
     do {
         Loop ();
+        score_keeper_.saveScoresToFile ();
         board_.Clear ();
     } while (IsPlayAgain ());
 
@@ -101,9 +102,11 @@ void Game::Loop () {
             game_active = false;
         } else if (board_.isFull ()) {
             std::cout << "Draw!" << std::endl;
-            score_keeper_.addScore (getCurrentPlayer ().getName (), ScoreType::Draw); // Add one draw to the player score_
+            score_keeper_.addScore (getCurrentPlayer ().getName (),
+                                    ScoreType::Draw); // Add one draw to the player score_
             setNextPlayer ();
-            score_keeper_.addScore (getCurrentPlayer ().getName (), ScoreType::Draw); // Add one draw to the player score_
+            score_keeper_.addScore (getCurrentPlayer ().getName (),
+                                    ScoreType::Draw); // Add one draw to the player score_
             game_active = false;
         } else {
             setNextPlayer ();

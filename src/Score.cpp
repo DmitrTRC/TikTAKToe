@@ -68,3 +68,18 @@ ScoreKeeper::ScoreKeeper () {
     loadScoresFromFile ();
 
 }
+
+void ScoreKeeper::saveScoresToFile () {
+    std::ofstream file (DB_URL);
+    if (!file.is_open ()) {
+        std::cout << "DB File is not open" << std::endl;
+        return;
+    }
+    for (auto &pair: scores_) {
+        auto score = pair.second.getScore ();
+        file << pair.first << " " << std::get<0> (score) << " " << std::get<1> (score) << " " << std::get<2> (score)
+             << std::endl;
+    }
+    file.close ();
+
+}
