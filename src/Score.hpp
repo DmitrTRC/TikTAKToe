@@ -7,8 +7,7 @@
 
 #include <iostream>
 #include <map>
-#include "Player.hpp"
-#include "Human_Player.hpp"
+
 
 
 enum class ScoreType {

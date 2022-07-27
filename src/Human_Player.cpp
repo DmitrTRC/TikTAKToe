@@ -17,7 +17,8 @@ int HumanPlayer::engageMove (const Board &board) {
 
 }
 
-HumanPlayer::HumanPlayer () {
-    std::cout << "class HumanPlayer constructor is running" << std::endl;
-    setName ("Human Player");
+HumanPlayer::HumanPlayer()= default;
+HumanPlayer::HumanPlayer (const std::string &name) {
+    std::cout << "class HumanPlayer constructor with parameter is running" << std::endl;
+    setName (name);
 }

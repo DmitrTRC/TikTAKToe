@@ -4,7 +4,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Game.hpp"
-#include "Player.hpp"
+#include "Human_Player.hpp"
+#include "Ai_Player.hpp"
 #include "Score.hpp"
 
 
