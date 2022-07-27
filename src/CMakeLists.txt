@@ -6,8 +6,8 @@ set(HEADER_FILES
         Board.hpp
         helper.hpp
         Ai_Player.hpp
-        Score.hpp
         Human_Player.hpp
+        Score.hpp
         )
 
 set(SOURCE_FILES
@@ -15,8 +15,9 @@ set(SOURCE_FILES
         Player.cpp
         Board.cpp
         Ai_Player.cpp
+        Human_Player.cpp
         Score.cpp
-        Human_Player.cpp )
+        )
 
 #set(SOURCE_FILES $(SOURCE_FILES))
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")

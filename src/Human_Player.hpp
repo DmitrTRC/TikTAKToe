@@ -10,7 +10,7 @@
 
 class HumanPlayer : public Player {
 public:
-    explicit HumanPlayer (const std::string &name = "Unknown");
+    HumanPlayer ();
 
     int engageMove (const Board &) override;
 
