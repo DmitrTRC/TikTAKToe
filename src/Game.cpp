@@ -44,7 +44,7 @@ void Game::Start () {
     do {
         Loop ();
         score_keeper_.saveScoresToFile ();
-        board_.Clear ();
+        board_.Clear (); // ????
     } while (IsPlayAgain ());
 
 }

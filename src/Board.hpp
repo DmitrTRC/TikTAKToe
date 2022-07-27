@@ -21,6 +21,8 @@ public:
 
     void Clear ();
 
+    void resetAvailablePositions();
+
     bool isFull ();
 
     bool isValidPosition (int position);

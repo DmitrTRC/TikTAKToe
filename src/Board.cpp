@@ -8,8 +8,6 @@
 
 
 Board::Board () {
-
-    available_positions_ = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     Clear ();
 }
 
@@ -49,6 +47,7 @@ bool Board::isFull () {
 void Board::Clear () {
     positions_.fill (' ');
     positions_[0] = '#';
+    resetAvailablePositions ();
 }
 
 bool Board::setPosition (int position, char mark) {
@@ -71,3 +70,7 @@ bool Board::isWinner () {
     return false;
 }
 
+void Board::resetAvailablePositions () {
+    available_positions_ = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+}
