@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <map>
+#include "player.hpp"
+
 
 
 enum class ScoreType {
@@ -38,7 +40,7 @@ private:
 };
 
 
-class ScoreKeeper : Score {
+class ScoreKeeper {
 public:
 
     ScoreKeeper ();
@@ -56,8 +58,7 @@ public:
 
 
 private:
-    std::map<std::string, Score> scores_;
-
+    std::map<HumanPlayer , Score> scores_;
 };
 
 

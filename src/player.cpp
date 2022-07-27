@@ -14,7 +14,6 @@
 
 Player::Player () {
     std::cout << "class Player constructor is running" << std::endl;
-    score_ = Score ();
     Name_ = "Unknown";
 }
 
@@ -22,22 +21,6 @@ Player::Player () {
 std::string Player::getName () {
     return Name_;
 }
-
-void Player::addScore (ScoreType score) {
-    switch (score) {
-        case ScoreType::Win:
-            score_.wins_++;
-            break;
-        case ScoreType::Lose:
-            Score_--;
-            break;
-        case ScoreType::Draw:
-            Score_ = Score_;
-            break;
-    }
-
-}
-
 
 void Player::setName (const std::string &name) {
     Name_ = name;

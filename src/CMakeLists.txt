@@ -11,7 +11,7 @@ set(SOURCE_FILES
         Game.cpp
         player.cpp
         Board.cpp
-        Ai_Player.cpp Ai_Player.hpp Score.cpp Score.hpp)
+        Ai_Player.cpp Ai_Player.hpp Score.cpp Score.hpp Human_Player.cpp Human_Player.hpp)
 
 #set(SOURCE_FILES $(SOURCE_FILES))
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")
