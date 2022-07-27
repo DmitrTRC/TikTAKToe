@@ -93,10 +93,17 @@ void Game::Loop () {
         if (board_.isWinner ()) {
             std::cout << "Player " << getCurrentPlayer ().getName () << " won!" << std::endl;
             board_.PrintBoard ();
-            getCurrentPlayer ().addScore (ScoreType::Win); // Add one win to the player score_
+
+            score_keeper_.addScore (getCurrentPlayer ().getName (), ScoreType::Win); // Add one win to the player score_
+            setNextPlayer ();
+            score_keeper_.addScore (getCurrentPlayer ().getName (),
+                                    ScoreType::Lose); // Add one loss to the player score_
             game_active = false;
         } else if (board_.isFull ()) {
             std::cout << "Draw!" << std::endl;
+            score_keeper_.addScore (getCurrentPlayer ().getName (), ScoreType::Draw); // Add one draw to the player score_
+            setNextPlayer ();
+            score_keeper_.addScore (getCurrentPlayer ().getName (), ScoreType::Draw); // Add one draw to the player score_
             game_active = false;
         } else {
             setNextPlayer ();

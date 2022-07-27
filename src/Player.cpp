@@ -11,7 +11,7 @@
 
 
 
-Player::Player () {
+Player::Player () : score_ (0, 0, 0) {
     std::cout << "class Player constructor is running" << std::endl;
     Name_ = "Unknown";
 }

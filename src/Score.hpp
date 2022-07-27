@@ -23,17 +23,18 @@ class Score {
 public:
     friend std::ostream &operator<< (std::ostream &, const Score &);
 
+    Score (int , int , int );
     Score ();
 
-    void setScore (const std::string &name, ScoreType score);
+    void setScore ( ScoreType score);
 
     auto getScore ();
 
 private:
     std::string name_;
-    int wins_;
-    int loses_;
-    int draws_;
+    int wins_{};
+    int loses_{};
+    int draws_{};
 
 
 };
@@ -44,9 +45,11 @@ public:
 
     ScoreKeeper ();
 
-    bool loadScoresFromFile ();
+    void loadScoresFromFile ();
 
     bool saveScoresToFile ();
+
+    void addScore (const std::string &name, ScoreType score);
 
 
     void printScores () {
@@ -59,6 +62,7 @@ public:
 
 private:
     std::map< std::string, Score> scores_;
+    const std::string DB_URL = "scores.db";
 };
 
 

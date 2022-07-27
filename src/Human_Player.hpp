@@ -16,7 +16,7 @@ public:
     int engageMove (const Board &) override;
 
 private:
-    int InputNextMove ();
+    static int InputNextMove ();
 
 };
 

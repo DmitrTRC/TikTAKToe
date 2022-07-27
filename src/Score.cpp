@@ -3,7 +3,7 @@
 //
 
 #include "Score.hpp"
-
+#include <fstream>
 
 
 std::ostream &operator<< (std::ostream &os, const Score &score) {
@@ -14,19 +14,20 @@ std::ostream &operator<< (std::ostream &os, const Score &score) {
     return os;
 }
 
-Score::Score () {
-    name_ = "Unknown";
-    wins_ = 0;
-    loses_ = 0;
-    draws_ = 0;
+Score::Score () = default;
 
+
+Score::Score (int wins, int loses, int draws) {
+    wins_ = wins;
+    loses_ = loses;
+    draws_ = draws;
 }
 
 auto Score::getScore () {
-    return std::make_tuple (name_, wins_, loses_, draws_);
+    return std::make_tuple (wins_, loses_, draws_);
 }
 
-void Score::setScore (const std::string &name, ScoreType score) {
+void Score::setScore (ScoreType score) {
     switch (score) {
         case ScoreType::Win:
             wins_++;
@@ -38,5 +39,32 @@ void Score::setScore (const std::string &name, ScoreType score) {
             draws_++;
             break;
     }
+
+}
+
+void ScoreKeeper::addScore (const std::string &name, ScoreType score) {
+    scores_[name].setScore (score);
+
+}
+
+void ScoreKeeper::loadScoresFromFile () {
+    std::ifstream file (DB_URL);
+    if (!file.is_open ()) {
+        std::cout << "DB File is not open" << std::endl;
+        return;
+    }
+    std::string name;
+    int wins;
+    int loses;
+    int draws;
+
+    while (file >> name >> wins >> loses >> draws) {
+        scores_[name] = Score (wins, loses, draws);
+    }
+    file.close ();
+}
+
+ScoreKeeper::ScoreKeeper () {
+    loadScoresFromFile ();
 
 }

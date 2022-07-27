@@ -26,7 +26,6 @@ public:
 
     void setMark (char mark);
 
-    void addScore (ScoreType score);
 
 private:
     std::string Name_;

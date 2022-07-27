@@ -25,14 +25,12 @@ public:
 private:
     bool is_playing_{}; // flag to check if the game is still running
     std::vector<Player *> players_; // vector of players
-
-
-
-
-    std::string InputUserName (); // function to get user name
-    int current_player_{}; // index of current player
+    ScoreKeeper score_keeper_; // score keeper
     Board board_; // game board
+    int current_player_{}; //
 
+    // index of current player
+    std::string InputUserName (); // function to get user name
 
     Player &getCurrentPlayer ();
 
