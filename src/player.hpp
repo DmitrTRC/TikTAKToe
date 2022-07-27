@@ -9,7 +9,7 @@
 #include "Board.hpp"
 
 
-//TODO: Separaate the class Player into three classes: Player, HumanPlayer and AIPlayer.
+
 class Player { //Define as abstract class
 public:
     Player ();

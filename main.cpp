@@ -6,13 +6,10 @@
 #include "Score.hpp"
 
 int main () {
-Score score;
-std::cout << score << std::endl;
 
-
-//    Game game;
-//    //Point 1. Create a game object. Start the game.
-//    game.Start ();
+    Game game;
+    //Point 1. Create a game object. Start the game.
+    game.Start ();
 
     return 0;
 }
