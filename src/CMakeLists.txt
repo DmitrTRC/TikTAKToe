@@ -1,22 +1,24 @@
 project(${CMAKE_PROJECT_NAME}_lib)
 
 set(HEADER_FILES
-        Game.hpp
         Player.hpp
         Board.hpp
         helper.hpp
         Ai_Player.hpp
         Human_Player.hpp
         Score.hpp
+        Score_Keeper.hpp
+        Game.hpp
         )
 
 set(SOURCE_FILES
-        Game.cpp
         Player.cpp
         Board.cpp
         Ai_Player.cpp
         Human_Player.cpp
         Score.cpp
+        Score_Keeper.cpp
+        Game.cpp
         )
 
 #set(SOURCE_FILES $(SOURCE_FILES))

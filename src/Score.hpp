@@ -28,41 +28,15 @@ public:
 
     void setScore ( ScoreType score);
 
-    auto getScore ();
+    std::tuple <int, int, int> getScore ();
 
 private:
-    std::string name_;
+
     int wins_{};
     int loses_{};
     int draws_{};
 
 
-};
-
-
-class ScoreKeeper {
-public:
-
-    ScoreKeeper ();
-
-    void loadScoresFromFile ();
-
-    void saveScoresToFile ();
-
-    void addScore (const std::string &name, ScoreType score);
-
-
-    void printScores () {
-        std::for_each (scores_.begin (), scores_.end (), [] (const std::pair<std::string, Score> &pair) {
-            std::cout << pair.second << std::endl;
-        });
-    };
-
-
-
-private:
-    std::map< std::string, Score> scores_;
-    const std::string DB_URL = "scores.db";
 };
 
 
