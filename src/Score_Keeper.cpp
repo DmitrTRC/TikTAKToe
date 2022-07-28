@@ -51,16 +51,26 @@ ScoreKeeper::ScoreKeeper () {
 }
 
 void ScoreKeeper::saveScoresToFile () {
-    std::ofstream file (DB_URL);
-    if (!file.is_open ()) {
-        std::cout << "DB File is not open" << std::endl;
-        return;
+    try{
+        std::ofstream file (DB_URL);
+        for (auto &[name, score]  : scores_) {
+            auto [wins, loses, draws] = score.getScore ();
+            file << name << " " << wins << " " << loses << " " << draws << std::endl;
+        }
+    } catch (std::exception &e) {
+        std::cerr << e.what () << std::endl;
     }
-    for (auto &pair: scores_) {
-        std::tuple<int, int, int> score = pair.second.getScore ();
-        file << pair.first << " " << std::get<0> (score) << " " << std::get<1> (score) << " " << std::get<2> (score)
-             << std::endl;
-    }
-    file.close ();
+
+//    std::ofstream file (DB_URL);
+//    if (!file.is_open ()) {
+//        std::cout << "DB File is not open" << std::endl;
+//        return;
+//    }
+//    for (auto &pair: scores_) {
+//        std::tuple<int, int, int> score = pair.second.getScore ();
+//        file << pair.first << " " << std::get<0> (score) << " " << std::get<1> (score) << " " << std::get<2> (score)
+//             << std::endl;
+//    }
+//    file.close ();
 
 }
