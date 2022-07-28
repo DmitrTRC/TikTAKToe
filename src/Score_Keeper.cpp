@@ -3,10 +3,9 @@
 //
 
 #include <fstream>
+#include <sstream>
 
 #include "Score_Keeper.hpp"
-
-
 
 
 void ScoreKeeper::addScore (const std::string &name, ScoreType score) {
@@ -15,20 +14,35 @@ void ScoreKeeper::addScore (const std::string &name, ScoreType score) {
 }
 
 void ScoreKeeper::loadScoresFromFile () {
-    std::ifstream file (DB_URL);
-    if (!file.is_open ()) {
-        std::cout << "DB File is not open" << std::endl;
-        return;
-    }
-    std::string name;
-    int wins;
-    int loses;
-    int draws;
+    try {
+        std::ifstream file (DB_URL);
+        std::string line;
+        while (std::getline (file, line)) {
+            std::string name;
+            int wins, loses, draws;
+            std::istringstream iss (line);
+            iss >> name >> wins >> loses >> draws;
+            scores_[name] = Score (wins, loses, draws);
+        }
+    } catch (std::exception &e) {
+        std::cerr << e.what () << std::endl;
 
-    while (file >> name >> wins >> loses >> draws) {
-        scores_[name] = Score (wins, loses, draws);
     }
-    file.close ();
+//    std::ifstream file (DB_URL);
+//    if (!file.is_open ()) {
+//        std::cout << "DB File is not open" << std::endl;
+//        return;
+//    }
+//
+//    std::string name;
+//    int wins;
+//    int loses;
+//    int draws;
+//
+//    while (file >> name >> wins >> loses >> draws) {
+//        scores_[name] = Score (wins, loses, draws);
+//    }
+//    file.close ();
 }
 
 ScoreKeeper::ScoreKeeper () {
