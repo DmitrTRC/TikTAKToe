@@ -37,6 +37,9 @@ void Score::setScore (ScoreType score) {
         case ScoreType::Draw:
             draws_++;
             break;
+        default:
+            std::cout << "Score type is not supported" << std::endl;
+            break;
     }
 
 }

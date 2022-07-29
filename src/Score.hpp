@@ -9,7 +9,6 @@
 #include <map>
 
 
-
 enum class ScoreType {
     Win,
     Lose,
@@ -23,12 +22,14 @@ class Score {
 public:
     friend std::ostream &operator<< (std::ostream &, const Score &);
 
-    Score (int , int , int );
+    Score (int, int, int);
+
     Score ();
 
-    void setScore ( ScoreType score);
+    void setScore (ScoreType score);
 
-    std::tuple <int, int, int> getScore ();
+
+    std::tuple<int, int, int> getScore ();
 
 private:
 
@@ -38,6 +39,7 @@ private:
 
 
 };
+
 
 
 #endif //TICTAC_SCORE_HPP
