@@ -1,7 +1,11 @@
 
 //
 // Created by Dmitry Morozov on 2/6/22.
+//#include "player.hpp"
+//#include "Board.hpp"
 //
+
+//#include <utility>
 
 #include "player.hpp"
 
@@ -14,19 +18,7 @@ Player::Player () {
     Name_ = "Unknown";
 }
 
-HumanPlayer::HumanPlayer (std::string name) {
-    std::cout << "class Player constructor is running" << std::endl;
-    setName (name);
 
-}
-
-std::string Player::getName () {
-    return Name_;
-}
-
-void Player::setName (std::string name) {
-    Name_ = name;
-}
 std::string Player::getPassword(){
     return Password_;
 }
@@ -35,31 +27,27 @@ void Player::setPassword(std::string password){
 }
 
 
-int HumanPlayer::engageMove () {
-    std::cout << "HumanPlayer engageMove is running" << std::endl;
-    int move;
-    std::cout << "Enter your move: ";
-    std::cin >> move;
-    return move;
+
+std::string Player::getName () {
+    return Name_;
 }
 
-//HumanPlayer::HumanPlayer () {
-//    std::cout << "class HumanPlayer constructor is running" << std::endl;
-//     setName( "Dmitry" );
-//
-//
-//}
-
-int AIPlayer::engageMove () {
-    std::cout << "AIPlayer engageMove is running" << std::endl;
-    int move = 5;
-    return move;
+void Player::addWin () {
+    Score_++;
 }
 
-void HumanPlayer::WhoFirst (){
-    std::cout<<"HumanPlayer WhoFirst is running"<<std::endl;
+void Player::setName (const std::string &name) {
+    Name_ = name;
 }
 
-void AIPlayer::WhoFirst (){
-    std::cout<<"AIPlayerWhoFirst is running"<<std::endl;
+char Player::getMark () const {
+
+    return mark_;
 }
+
+void Player::setMark (char mark) {
+    mark_ = mark;
+
+}
+
+

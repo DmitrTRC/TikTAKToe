@@ -10,7 +10,7 @@ set(SOURCE_FILES
         Game.cpp
         player.cpp
         Board.cpp
-        )
+        A.cpp Ai_Player.cpp Ai_Player.h Human.cpp Human.h)
 
 #set(SOURCE_FILES $(SOURCE_FILES))
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")
