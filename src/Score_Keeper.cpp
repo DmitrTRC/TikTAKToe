@@ -4,6 +4,8 @@
 
 #include <fstream>
 #include <sstream>
+#include <algorithm>
+
 
 #include "Score_Keeper.hpp"
 
@@ -51,9 +53,9 @@ ScoreKeeper::ScoreKeeper () {
 }
 
 void ScoreKeeper::saveScoresToFile () {
-    try{
+    try {
         std::ofstream file (DB_URL);
-        for (auto &[name, score]  : scores_) {
+        for (auto &[name, score]: scores_) {
             auto [wins, loses, draws] = score.getScore ();
             file << name << " " << wins << " " << loses << " " << draws << std::endl;
         }
@@ -74,3 +76,10 @@ void ScoreKeeper::saveScoresToFile () {
 //    file.close ();
 
 }
+
+void ScoreKeeper::sortScores () {
+    std::sort (scores_.begin (), scores_.end ());
+
+}
+
+

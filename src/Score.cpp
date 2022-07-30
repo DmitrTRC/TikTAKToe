@@ -44,3 +44,7 @@ void Score::setScore (ScoreType score) {
 
 }
 
+float Score::getAverageScore () const {
+    return wins_ / (wins_ + loses_ + draws_);
+}
+

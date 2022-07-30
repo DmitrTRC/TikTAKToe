@@ -9,6 +9,7 @@
 
 #include "Score.hpp"
 
+
 class ScoreKeeper {
 public:
 
@@ -20,17 +21,19 @@ public:
 
     void addScore (const std::string &name, ScoreType score);
 
+    void sortScores ();
+
 
     void printScores () {
+
         std::for_each (scores_.begin (), scores_.end (), [] (const std::pair<std::string, Score> &pair) {
             std::cout << pair.second << std::endl;
         });
     };
 
 
-
 private:
-    std::map< std::string, Score> scores_;
+    std::map<std::string, Score> scores_;
     const std::string DB_URL = "scores.db";
 };
 

@@ -28,8 +28,9 @@ public:
 
     void setScore (ScoreType score);
 
-
     std::tuple<int, int, int> getScore ();
+
+    [[nodiscard]] float getAverageScore () const;
 
 private:
 
