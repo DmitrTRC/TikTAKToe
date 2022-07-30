@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Game.hpp"
 #include "player.hpp"
-#include"human.h"
+#include "human.h"
 
 
 Game::Game () {

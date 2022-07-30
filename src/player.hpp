@@ -32,7 +32,7 @@ private:
     std::string Name_;
     int Score_;
     char mark_;
-    std::string Password_
+    std::string Password_;
 };
 
 
