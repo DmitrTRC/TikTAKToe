@@ -30,7 +30,7 @@ public:
 
     std::tuple<int, int, int> getScore ();
 
-    [[nodiscard]] float getAverageScore () const;
+    [[nodiscard]] double getAverageScore () const;
 
 private:
 
@@ -39,8 +39,8 @@ private:
     int draws_{};
 
 
-};
 
+};
 
 
 #endif //TICTAC_SCORE_HPP

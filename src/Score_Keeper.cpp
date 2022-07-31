@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
-
+#include <vector>
 
 #include "Score_Keeper.hpp"
 
@@ -30,21 +30,7 @@ void ScoreKeeper::loadScoresFromFile () {
         std::cerr << e.what () << std::endl;
 
     }
-//    std::ifstream file (DB_URL);
-//    if (!file.is_open ()) {
-//        std::cout << "DB File is not open" << std::endl;
-//        return;
-//    }
-//
-//    std::string name;
-//    int wins;
-//    int loses;
-//    int draws;
-//
-//    while (file >> name >> wins >> loses >> draws) {
-//        scores_[name] = Score (wins, loses, draws);
-//    }
-//    file.close ();
+
 }
 
 ScoreKeeper::ScoreKeeper () {
@@ -63,22 +49,20 @@ void ScoreKeeper::saveScoresToFile () {
         std::cerr << e.what () << std::endl;
     }
 
-//    std::ofstream file (DB_URL);
-//    if (!file.is_open ()) {
-//        std::cout << "DB File is not open" << std::endl;
-//        return;
-//    }
-//    for (auto &pair: scores_) {
-//        std::tuple<int, int, int> score = pair.second.getScore ();
-//        file << pair.first << " " << std::get<0> (score) << " " << std::get<1> (score) << " " << std::get<2> (score)
-//             << std::endl;
-//    }
-//    file.close ();
-
 }
 
-void ScoreKeeper::sortScores () {
-    std::sort (scores_.begin (), scores_.end ());
+
+std::vector<std::pair<std::string, int> > ScoreKeeper::getScoresVector () {
+    std::vector<std::pair<std::string, int> > scores;
+    for (auto &[name, score]: scores_) {
+        scores.emplace_back (name, score.getAverageScore () * 100);
+    }
+    std::sort (scores.begin (), scores.end (),
+               [] (const std::pair<std::string, double> &lhs, const std::pair<std::string, double> &rhs) {
+                   return lhs.second > rhs.second;
+               });
+    return scores;
+
 
 }
 

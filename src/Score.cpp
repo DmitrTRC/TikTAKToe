@@ -3,6 +3,7 @@
 //
 
 #include "Score.hpp"
+#include <stdexcept>
 #include <fstream>
 
 
@@ -38,13 +39,14 @@ void Score::setScore (ScoreType score) {
             draws_++;
             break;
         default:
-            std::cout << "Score type is not supported" << std::endl;
-            break;
+            throw std::invalid_argument ("Score type is not supported!");
+
     }
 
 }
 
-float Score::getAverageScore () const {
-    return wins_ / (wins_ + loses_ + draws_);
+double Score::getAverageScore () const {
+    return static_cast<double>(wins_) / (wins_ + loses_ + draws_);
 }
+
 

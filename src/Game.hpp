@@ -34,6 +34,7 @@ private:
     std::string InputUserName (); // function to get user name
 
     Player &getCurrentPlayer ();
+    void printTopScores (int = 5);
 
     void Loop ();
 };

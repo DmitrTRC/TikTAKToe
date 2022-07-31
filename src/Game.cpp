@@ -24,6 +24,7 @@ Game::~Game () {
 //Point 2. Main Game loop. Initialize the game.
 void Game::Start () {
     std::cout << "Game started" << std::endl;
+    printTopScores ();
 
     //Point 3. Create two players. ( Ask for type of player and name of player)
 
@@ -129,4 +130,18 @@ int Game::getFirstPlayer () {
 void Game::setNextPlayer () { //current_player ( 0 or 1 )
     current_player_ = 1 - current_player_;
 
+}
+
+void Game::printTopScores (int n) {
+    auto scores = score_keeper_.getScoresVector ();
+    std::cout << std::endl << "Top " << n << " Players scores ( Percentage of wins ) :" << std::endl;
+    int counter{1};
+    for (auto &[name, score]: scores) {
+        std::cout << counter << ". " << name << ": " << score << std::endl;
+        counter++;
+        if (counter == n + 1) { // Starting from 1 up to n + 1
+            break;
+        }
+    }
+    std::cout << std::endl;
 }
