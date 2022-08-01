@@ -1,10 +1,8 @@
-//
-// Created by Dmitry Morozov on 28/5/22.
-//
 #include <iostream>
 #include <stdlib.h>
 #include "Game.hpp"
 #include "player.hpp"
+#include"human.h"
 
 
 Game::Game () {

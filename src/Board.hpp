@@ -1,6 +1,3 @@
-//
-// Created by Dmitry Morozov on 10/6/22.
-//
 
 #ifndef TICTAC_BOARD_HPP
 #define TICTAC_BOARD_HPP
@@ -20,6 +17,7 @@ public:
     void PrintBoard ();
 
     void Clear ();
+    void ShowPrompt();
 
     bool isFull ();
 

@@ -1,13 +1,15 @@
 
 //
 // Created by Dmitry Morozov on 2/6/22.
+//#include "player.hpp"
+//#include "Board.hpp"
 //
 
+//#include <utility>
+
 #include "player.hpp"
-#include "Board.hpp"
 
 #include <iostream>
-#include <utility>
 
 
 Player::Player () {
@@ -15,6 +17,15 @@ Player::Player () {
     Score_ = 0;
     Name_ = "Unknown";
 }
+
+
+std::string Player::getPassword(){
+    return Password_;
+}
+void Player::setPassword(std::string password){
+    Password_=password;
+}
+
 
 
 std::string Player::getName () {
@@ -37,23 +48,6 @@ char Player::getMark () const {
 void Player::setMark (char mark) {
     mark_ = mark;
 
-}
-
-int HumanPlayer::InputNextMove () {
-    int number{0};
-    std::cout << "Enter your move number from 1 to 9 : ";
-    std::cin >> number;
-    return number;
-}
-
-int HumanPlayer::engageMove (const Board &board) {
-    return InputNextMove ();
-
-}
-
-HumanPlayer::HumanPlayer (const std::string &name) {
-    std::cout << "class HumanPlayer constructor is running" << std::endl;
-    setName (name);
 }
 
 

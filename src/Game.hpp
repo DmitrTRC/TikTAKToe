@@ -1,4 +1,3 @@
-
 #ifndef TIKTAKTOE_GAME_HPP
 #define TIKTAKTOE_GAME_HPP
 

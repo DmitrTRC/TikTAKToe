@@ -4,14 +4,13 @@ set(HEADER_FILES
         Game.hpp
         player.hpp
         Board.hpp
-        helper.hpp
         )
 
 set(SOURCE_FILES
         Game.cpp
         player.cpp
         Board.cpp
-        Ai_Player.cpp Ai_Player.hpp Score.cpp Score.hpp)
+        A.cpp Ai_Player.cpp Ai_Player.h Human.cpp Human.h)
 
 #set(SOURCE_FILES $(SOURCE_FILES))
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")

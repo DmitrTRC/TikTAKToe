@@ -9,14 +9,15 @@
 #include "Board.hpp"
 
 
-
+//TODO: Separaate the class Player into three classes: Player, HumanPlayer and AIPlayer.
 class Player { //Define as abstract class
 public:
     Player ();
 
 
-    virtual int engageMove (const Board &) = 0; // Define as pure virtual function - abstract class
-
+    virtual int engageMove (const Board &) = 0;// Define as pure virtual function - abstract class
+    virtual void setPassword(std::string password);
+    std::string getPassword();
     std::string getName ();
 
     void setName (const std::string & = "Unknown");
@@ -31,17 +32,7 @@ private:
     std::string Name_;
     int Score_;
     char mark_;
-};
-
-class HumanPlayer : public Player {
-public:
-    HumanPlayer (const std::string &name = "Unknown");
-
-    int engageMove (const Board &) override;
-
-private:
-    static int InputNextMove ();
-
+    std::string Password_
 };
 
 
