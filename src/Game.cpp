@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "Game.hpp"
 #include "Human_Player.hpp"
-#include "Ai_Player.hpp"
+#include "Ai_Easy_Player.hpp"
 #include "Score.hpp"
 
 
@@ -32,7 +32,8 @@ void Game::Start () {
     HumanPlayer player1 (InputUserName ());
     players_.push_back (&player1); // Put player1 address in vector
 
-    HumanPlayer player2 (InputUserName ());
+//    HumanPlayer player2 (InputUserName ());
+    AI_EASY_Player player2 ("AI Player");
     players_.push_back (&player2);
 
     //Point 4. Set first player.
