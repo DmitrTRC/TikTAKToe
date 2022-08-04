@@ -21,7 +21,9 @@ public:
 
     void Clear ();
 
-    void resetAvailablePositions();
+    void resetAvailablePositions ();
+
+    [[nodiscard]] std::vector<int> getAvailablePositions ()const;
 
     bool isFull ();
 

@@ -9,7 +9,9 @@ set(HEADER_FILES
         Score.hpp
         Score_Keeper.hpp
         Game.hpp
-        )
+        Ai_Easy_Player.hpp)
+
+
 
 set(SOURCE_FILES
         Player.cpp
@@ -19,7 +21,8 @@ set(SOURCE_FILES
         Score.cpp
         Score_Keeper.cpp
         Game.cpp
-        )
+        Ai_Easy_Player.cpp)
+
 
 #set(SOURCE_FILES $(SOURCE_FILES))
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")
