@@ -13,5 +13,6 @@ AI_EASY_Player::AI_EASY_Player (const std::string &name) {
 
 int AI_EASY_Player::engageMove (const Board &board) {
     // Return random number from available positions
+    //TODO: implement AI logic : iterate through available positions and return if it has a winning move or randome move
     return board.getAvailablePositions ().at (rand () % board.getAvailablePositions ().size ());
 }
