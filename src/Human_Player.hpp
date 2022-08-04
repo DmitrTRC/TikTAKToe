@@ -11,7 +11,7 @@
 class HumanPlayer : public Player {
 public:
     HumanPlayer ();
-    HumanPlayer (const std::string &);
+    explicit HumanPlayer (const std::string &);
 
     int engageMove (const Board &) override;
 
