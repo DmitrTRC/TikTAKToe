@@ -7,12 +7,7 @@
 #include <fstream>
 
 
-std::ostream &operator<< (std::ostream &os, const Score &score) {
-    os << "Wins: " << score.wins_ << std::endl;
-    os << "Loses: " << score.loses_ << std::endl;
-    os << "Draws: " << score.draws_ << std::endl;
-    return os;
-}
+
 
 Score::Score () = default;
 

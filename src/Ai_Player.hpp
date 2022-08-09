@@ -10,7 +10,7 @@
 
 class AI_Player : public Player {
 public:
-    AI_Player (const std::string &name = "AI Player");
+    explicit AI_Player (const std::string &name = "AI Player");
 
     int engageMove (const Board &) override;
 };
