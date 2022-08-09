@@ -331,3 +331,4 @@ Temporary Items
 # Directories potentially created on remote AFP share
 
 .idea/codestream.xml
+.idea/
