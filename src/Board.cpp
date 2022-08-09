@@ -21,6 +21,7 @@ const std::array<std::array<int, 3>, 8> &Board::getWinningCombinations () {
 
 //TODO: Modify this function to show help information about the board.
 void Board::PrintBoard () {
+    std::cout << std::endl;
     const std::string horizontal_line = "---+---+---";
     const std::string vertical_line = "|";
 
@@ -36,6 +37,7 @@ void Board::PrintBoard () {
               << positions_[3]
               << std::endl;
 
+    std::cout << std::endl;
 }
 
 
@@ -77,5 +79,5 @@ void Board::resetAvailablePositions () {
 
 std::vector<int> Board::getAvailablePositions () const {
 
-    return {available_positions_.begin(), available_positions_.end()};
+    return {available_positions_.begin (), available_positions_.end ()};
 }

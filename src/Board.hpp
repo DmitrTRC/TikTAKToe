@@ -8,7 +8,7 @@
 #include <array>
 #include <set>
 
-
+//TODO: Add draw_help() method
 class Board {
 public:
     Board ();

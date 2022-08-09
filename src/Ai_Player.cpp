@@ -23,7 +23,7 @@ return 0;
 }
 
 AI_Player::AI_Player (const std::string &name) {
-    std::cout << "class AIPlayer constructor is running" << std::endl;
+    //std::cout << "class AIPlayer constructor is running" << std::endl;
     setName (name);
 
 }
