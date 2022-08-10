@@ -13,6 +13,9 @@ public:
     explicit AI_Player (const std::string &name = "AI Player");
 
     int engageMove (const Board &) override;
+
+private:
+    char getOpponentMark () const;
 };
 
 
