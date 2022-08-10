@@ -6,6 +6,7 @@
 #define TIKTAKTOE_HELPER_HPP
 
 #include <iostream>
+#include "Resources.hpp"
 
 
 void ClearScreen () {
@@ -28,11 +29,17 @@ void DrawLogo () {
 }
 
 //TODO: Refactor ART Styles
+// Make next banners: GAME OVER, WINNER, DRAW, etc.
 void DrawGameOver () {
     const std::string GAME_OVER = "GAME OVER";
     std::cout << GAME_OVER << std::endl;
 }
 
+void DrawWinner (const std::string &winner) {
+    std::cout << std::endl;
+    std::cout << WINNER << std::endl;
+    std::cout << "Player " << winner << " won ! " << std::endl;
+}
 
 
 #endif //TIKTAKTOE_HELPER_HPP

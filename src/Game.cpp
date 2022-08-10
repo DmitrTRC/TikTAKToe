@@ -107,7 +107,7 @@ void Game::Loop () {
 
         //Point 5.5. Check if the game is over.
         if (board_.isWinner ()) {
-            std::cout << "Player " << getCurrentPlayer ().getName () << " won!" << std::endl;
+            DrawWinner (getCurrentPlayer ().getName ());
             board_.PrintBoard ();
 
             score_keeper_.addScore (getCurrentPlayer ().getName (), ScoreType::Win); // Add one win to the player score_

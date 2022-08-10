@@ -5,25 +5,18 @@
 #include "Ai_Player.hpp"
 
 
+//Step 1: Check available positions to win by move
+//Step 2: Check available positions to block opponent from winning by move
+//Step 3: Check available positions in place 5
+//Step 4: Check available positions to win by diagonal
+//Step 5: Check positions [2,4,6,8] to win by diagonal
 int AI_Player::engageMove (const Board &board) {
-//    int best_move{0};
-//    int best_score{0};
-//    for (int i{0}; i < 9; i++) {
-//        if (board.isValidPosition (i)) {
-//            Board board_copy{board};
-//            board_copy.setPosition (i, getMark ());
-//            int score{board_copy.getScore ()};
-//            if (score > best_score) {
-//                best_score = score;
-//                best_move = i;
-//            }
-//        }
-//    }
-return 0;
+
+    return 0;
 }
 
 AI_Player::AI_Player (const std::string &name) {
-    //std::cout << "class AIPlayer constructor is running" << std::endl;
+
     setName (name);
 
 }
