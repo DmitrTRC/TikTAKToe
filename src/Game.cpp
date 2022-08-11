@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 #include "Ai_Easy_Player.hpp"
+#include "Ai_Player.hpp"
 #include "Game.hpp"
 #include "helper.hpp"
 #include "Human_Player.hpp"
@@ -40,7 +41,8 @@ void Game::Start () {
     //TODO: Need to ask for player type and name
 
 //    HumanPlayer player2 (InputUserName ());
-    AI_EASY_Player player2 ("AI Player");
+//    AI_EASY_Player player2 ("AI Player");
+    AI_Player player2 ("AI Player");
     players_.push_back (&player2);
 
     //Point 4. Set first player.

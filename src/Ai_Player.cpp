@@ -7,6 +7,7 @@
 #include "Ai_Player.hpp"
 
 
+//FIXME: Check logic with  EVEN and ODD Moves
 int AI_Player::engageMove (const Board &board) {
     //Step 1: Check available positions to win by move
     //Step 2: Check available positions to block opponent from winning by move
@@ -18,7 +19,7 @@ int AI_Player::engageMove (const Board &board) {
 
     auto *board_ptr = new Board (board);
     std::vector<int> available_positions = board.getAvailablePositions ();
-
+    // available_positions = {1,2,4,7,9}
     for (int position: available_positions) {
         board_ptr->setPosition (position, getMark ());
         if (board_ptr->isWinner ()) {
@@ -37,7 +38,7 @@ int AI_Player::engageMove (const Board &board) {
         }
     }
 
-
+//TODO: Make random selection
     if (result_move == -1) {
         for (int position: available_positions) {
             if (position == 1 || position == 3 || position == 7 || position == 9) {
