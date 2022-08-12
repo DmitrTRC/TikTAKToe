@@ -18,6 +18,8 @@ bool Board::isValidPosition (int position) {
 const std::array<std::array<int, 3>, 8> &Board::getWinningCombinations () {
     return winning_combinations_;
 }
+
+//TODO: Refactor to :  draw_help() method
 void Board::ShowPrompt(){
   const std::string horizontal_line = "---+---+---";
     const std::string vertical_line = "|";

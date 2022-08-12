@@ -118,7 +118,7 @@ void Game::Loop () {
                                     ScoreType::Lose); // Add one loss to the player score_
             game_active = false;
         } else if (board_.isFull ()) {
-            std::cout << "Draw!" << std::endl;
+            DrawDraw ();
             score_keeper_.addScore (getCurrentPlayer ().getName (),
                                     ScoreType::Draw); // Add one draw to the player score_
             setNextPlayer ();

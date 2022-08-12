@@ -17,21 +17,13 @@ void ClearScreen () {
 }
 
 void DrawLogo () {
-    const std::string LOGO = " ___________ __    __   ___      ___________  __      __   ___      ___________ ______   _______  \n"
-                             "(\"     _   \")\" \\  |/\"| /  \")    (\"     _   \")/\"\"\\    |/\"| /  \")    (\"     _   \")    \" \\ /\"     \"| \n"
-                             " )__/  \\\\__/||  | (: |/   /      )__/  \\\\__//    \\   (: |/   /      )__/  \\\\__// ____  (: ______) \n"
-                             "    \\\\_ /   |:  | |    __/          \\\\_ /  /' /\\  \\  |    __/          \\\\_ / /  /    ) :)/    |   \n"
-                             "    |.  |   |.  | (// _  \\          |.  | //  __'  \\ (// _  \\          |.  |(: (____/ //// ___)_  \n"
-                             "    \\:  |   /\\  |\\|: | \\  \\         \\:  |/   /  \\\\  \\|: | \\  \\         \\:  | \\        /(:      \"| \n"
-                             "     \\__|  (__\\_|_|__|  \\__)         \\__(___/    \\___|__|  \\__)         \\__|  \\\"_____/  \\_______) \n"
-                             "                                                                                                  ";
+
     std::cout << LOGO << std::endl;
 }
 
 //TODO: Refactor ART Styles
 // Make next banners: GAME OVER, WINNER, DRAW, etc.
 void DrawGameOver () {
-    const std::string GAME_OVER = "GAME OVER";
     std::cout << GAME_OVER << std::endl;
 }
 
@@ -39,6 +31,11 @@ void DrawWinner (const std::string &winner) {
     std::cout << std::endl;
     std::cout << WINNER << std::endl;
     std::cout << "Player " << winner << " won ! " << std::endl;
+}
+
+void DrawDraw () {
+    std::cout << std::endl;
+    std::cout << DRAW << std::endl;
 }
 
 
