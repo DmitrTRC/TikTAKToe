@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Board.hpp"
 
-#include <iostream>
+#include <vector>
 
 
 Board::Board () {
@@ -21,6 +21,7 @@ const std::array<std::array<int, 3>, 8> &Board::getWinningCombinations () {
 
 //TODO: Modify this function to show help information about the board.
 void Board::PrintBoard () {
+    std::cout << std::endl;
     const std::string horizontal_line = "---+---+---";
     const std::string vertical_line = "|";
 
@@ -36,6 +37,7 @@ void Board::PrintBoard () {
               << positions_[3]
               << std::endl;
 
+    std::cout << std::endl;
 }
 
 
@@ -73,4 +75,9 @@ bool Board::isWinner () {
 void Board::resetAvailablePositions () {
     available_positions_ = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
+}
+
+std::vector<int> Board::getAvailablePositions () const {
+
+    return {available_positions_.begin (), available_positions_.end ()};
 }

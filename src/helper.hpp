@@ -6,6 +6,7 @@
 #define TIKTAKTOE_HELPER_HPP
 
 #include <iostream>
+#include "Resources.hpp"
 
 
 void ClearScreen () {
@@ -18,7 +19,7 @@ void ClearScreen () {
 void DrawLogo () {
     const std::string LOGO = " ___________ __    __   ___      ___________  __      __   ___      ___________ ______   _______  \n"
                              "(\"     _   \")\" \\  |/\"| /  \")    (\"     _   \")/\"\"\\    |/\"| /  \")    (\"     _   \")    \" \\ /\"     \"| \n"
-                              " )__/  \\\\__/||  | (: |/   /      )__/  \\\\__//    \\   (: |/   /      )__/  \\\\__// ____  (: ______) \n"
+                             " )__/  \\\\__/||  | (: |/   /      )__/  \\\\__//    \\   (: |/   /      )__/  \\\\__// ____  (: ______) \n"
                              "    \\\\_ /   |:  | |    __/          \\\\_ /  /' /\\  \\  |    __/          \\\\_ / /  /    ) :)/    |   \n"
                              "    |.  |   |.  | (// _  \\          |.  | //  __'  \\ (// _  \\          |.  |(: (____/ //// ___)_  \n"
                              "    \\:  |   /\\  |\\|: | \\  \\         \\:  |/   /  \\\\  \\|: | \\  \\         \\:  | \\        /(:      \"| \n"
@@ -26,6 +27,20 @@ void DrawLogo () {
                              "                                                                                                  ";
     std::cout << LOGO << std::endl;
 }
+
+//TODO: Refactor ART Styles
+// Make next banners: GAME OVER, WINNER, DRAW, etc.
+void DrawGameOver () {
+    const std::string GAME_OVER = "GAME OVER";
+    std::cout << GAME_OVER << std::endl;
+}
+
+void DrawWinner (const std::string &winner) {
+    std::cout << std::endl;
+    std::cout << WINNER << std::endl;
+    std::cout << "Player " << winner << " won ! " << std::endl;
+}
+
 
 #endif //TIKTAKTOE_HELPER_HPP
 

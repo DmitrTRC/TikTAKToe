@@ -8,7 +8,7 @@
 #include <array>
 #include <set>
 
-
+//TODO: Add draw_help() method
 class Board {
 public:
     Board ();
@@ -21,7 +21,9 @@ public:
 
     void Clear ();
 
-    void resetAvailablePositions();
+    void resetAvailablePositions ();
+
+    [[nodiscard]] std::vector<int> getAvailablePositions ()const;
 
     bool isFull ();
 
