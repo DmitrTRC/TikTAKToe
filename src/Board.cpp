@@ -18,6 +18,15 @@ bool Board::isValidPosition (int position) {
 const std::array<std::array<int, 3>, 8> &Board::getWinningCombinations () {
     return winning_combinations_;
 }
+void Board::ShowPrompt(){
+  const std::string horizontal_line = "---+---+---";
+    const std::string vertical_line = "|";
+    std::cout << " " << "1" << " " << vertical_line << " " << "2" << " " << vertical_line << " "<< "3"<< std::endl;
+    std::cout << horizontal_line << std::endl;
+    std::cout << " " << "4" << " " << vertical_line << " " << "5"<< " " << vertical_line << " "<<"6"<< std::endl;
+    std::cout << horizontal_line << std::endl;
+    std::cout << " " << "7" << " " << vertical_line << " " << "8" << " " << vertical_line << " "<< "9"<< std::endl;
+}
 
 //TODO: Modify this function to show help information about the board.
 void Board::PrintBoard () {
@@ -25,16 +34,16 @@ void Board::PrintBoard () {
     const std::string horizontal_line = "---+---+---";
     const std::string vertical_line = "|";
 
-    std::cout << " " << positions_[7] << " " << vertical_line << " " << positions_[8] << " " << vertical_line << " "
-              << positions_[9]
+    std::cout << " " << positions_[1] << " " << vertical_line << " " << positions_[2] << " " << vertical_line << " "
+              << positions_[3]
               << std::endl;
     std::cout << horizontal_line << std::endl;
     std::cout << " " << positions_[4] << " " << vertical_line << " " << positions_[5] << " " << vertical_line << " "
               << positions_[6]
               << std::endl;
     std::cout << horizontal_line << std::endl;
-    std::cout << " " << positions_[1] << " " << vertical_line << " " << positions_[2] << " " << vertical_line << " "
-              << positions_[3]
+    std::cout << " " << positions_[7] << " " << vertical_line << " " << positions_[8] << " " << vertical_line << " "
+              << positions_[9]
               << std::endl;
 
     std::cout << std::endl;
