@@ -18,6 +18,7 @@ public:
     bool setPosition (int position, char mark);
 
     void PrintBoard ();
+    void ShowPrompt();
 
     void Clear ();
 
