@@ -3,6 +3,7 @@
 //
 #include <iostream>
 
+
 #ifndef TICTAC_MAIN_MENU_ENGINE_HPP
 #define TICTAC_MAIN_MENU_ENGINE_HPP
 
@@ -19,14 +20,20 @@
 // 4. Start game
 // 5. Exit
 
+
+//FIXME: Rename variables and functions
 class MenuEngine {
 public:
-    MenuEngine();
+    MenuEngine ();
+
     int gamechoice;
-    void menu();
+
+    void menu ();
+
 private:
-    void setgamechoice();
-    int getgamechoice();
+    void setgamechoice ();
+
+    int getgamechoice ();
 
 };
 
