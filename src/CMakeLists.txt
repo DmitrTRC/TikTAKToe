@@ -22,7 +22,7 @@ set(SOURCE_FILES
         Score.cpp
         Score_Keeper.cpp
         Game.cpp
-        Ai_Easy_Player.cpp  )
+        Ai_Easy_Player.cpp Menu_Engine.cpp Menu_Engine.hpp)
 
 
 #set(SOURCE_FILES $(SOURCE_FILES))

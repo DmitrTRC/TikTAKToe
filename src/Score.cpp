@@ -7,8 +7,7 @@
 #include <fstream>
 
 
-
-
+//TODO: Add number of games played to the statistics file
 Score::Score () = default;
 
 
