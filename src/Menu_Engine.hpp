@@ -1,6 +1,7 @@
 //
 // Created by Dmitry Morozov on 12/8/22.
 //
+#include <iostream>
 
 #ifndef TICTAC_MAIN_MENU_ENGINE_HPP
 #define TICTAC_MAIN_MENU_ENGINE_HPP
@@ -19,6 +20,13 @@
 // 5. Exit
 
 class MenuEngine {
+public:
+    MenuEngine();
+    int gamechoice;
+    void menu();
+private:
+    void setgamechoice();
+    int getgamechoice();
 
 };
 
