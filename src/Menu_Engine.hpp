@@ -18,7 +18,40 @@
 // 4. Start game
 // 5. Exit
 
-class MenuEngine {
+// Define short hand for function pointer
+//typedef void (*Menu_Processing_Function_Ptr) ();
+using Menu_Processing_Function_Ptr = void (*) ();
+
+class Menu_Item {
+
+public:
+    Menu_Item (int number, const char *text, Menu_Processing_Function_Ptr p_processing_function);
+
+
+    int number () const;
+
+    const char *text () const;
+
+    void execute () const;
+
+
+private:
+
+    unsigned int number_;
+    const char *text_;
+    Menu_Processing_Function_Ptr p_processing_function;
+};
+
+class Console_Menu {
+public:
+
+
+    Console_Menu (Menu_Item *, unsigned int);
+
+    void Run (Menu_Item *p_menu, unsigned int item_quantity);
+
+
+private:
 
 };
 
