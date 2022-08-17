@@ -48,10 +48,11 @@ public:
 
     Console_Menu (Menu_Item *, unsigned int);
 
-    void Run (Menu_Item *p_menu, unsigned int item_quantity);
+    void Run (Menu_Item * p_menu, unsigned int item_quantity);
 
 
 private:
+    std::string caption_;
 
 };
 
