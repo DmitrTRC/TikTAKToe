@@ -20,26 +20,17 @@
 
 // Define short hand for function pointer
 //typedef void (*Menu_Processing_Function_Ptr) ();
+
 using Menu_Processing_Function_Ptr = void (*) ();
 
-class Menu_Item {
+struct Menu_Item {
 
 public:
-    Menu_Item (int number, const char *text, Menu_Processing_Function_Ptr p_processing_function);
+    Menu_Item (int number, const char *text, Menu_Processing_Function_Ptr p_exec_function);
 
-
-    int number () const;
-
-    const char *text () const;
-
-    void execute () const;
-
-
-private:
-
-    unsigned int number_;
-    const char *text_;
-    Menu_Processing_Function_Ptr p_processing_function;
+    unsigned int number;
+    const char *text;
+    Menu_Processing_Function_Ptr p_exec_function;
 };
 
 class Console_Menu {
