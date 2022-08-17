@@ -6,6 +6,7 @@
 #include "Board.hpp"
 #include "Player.hpp"
 #include "Score_Keeper.hpp"
+#include "Menu_Engine.hpp"
 
 
 class Game {
@@ -28,13 +29,15 @@ private:
     std::vector<Player *> players_; // vector of players
     ScoreKeeper score_keeper_; // score keeper
     Board board_; // game board
+    MenuEngine menu_engine_; // menu engine
     int current_player_{}; //
 
     // index of current player
     std::string InputUserName (); // function to get user name
 
     Player &getCurrentPlayer ();
-    void printTopScores (int = 5 );
+
+    void printTopScores (int = 5);
 
     void Loop ();
 };
