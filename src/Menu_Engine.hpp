@@ -25,7 +25,6 @@ using Menu_Processing_Function_Ptr = void (*) ();
 
 struct Menu_Item {
 
-public:
     Menu_Item (int number, const char *text, Menu_Processing_Function_Ptr p_exec_function);
 
     unsigned int number;
@@ -37,7 +36,7 @@ class Console_Menu {
 public:
 
 
-    Console_Menu (Menu_Item *, unsigned int);
+    Console_Menu (std::vector<Menu_Item *>, unsigned int);
 
     void Run (Menu_Item * p_menu, unsigned int item_quantity);
 
