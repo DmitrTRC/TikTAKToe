@@ -36,7 +36,7 @@ class Console_Menu {
 public:
 
 
-    Console_Menu (std::vector<Menu_Item *>, unsigned int);
+//    Console_Menu (std::vector<Menu_Item *>, unsigned int);
 
     void Run (Menu_Item * p_menu, unsigned int item_quantity);
 
