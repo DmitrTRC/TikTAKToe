@@ -4,7 +4,7 @@
 //TODO: Sort order of headers
 #include <iostream>
 #include <stdlib.h>
-
+#include "Menu_Engine.hpp"
 #include "Ai_Easy_Player.hpp"
 #include "Ai_Player.hpp"
 #include "Game.hpp"
@@ -27,10 +27,12 @@ Game::~Game () {
 
 //Point 2. Main Game loop. Initialize the game.
 void Game::Start () {
+    MenuEngine a;
+    a.menu();
+
     DrawLogo ();
     printTopScores ();
-
-    //board_.DrawHelper ();
+//board_.DrawHelper ();
 
     //Point 3. Create two players. ( Ask for type of player and name of player)
 
@@ -53,6 +55,7 @@ void Game::Start () {
 
 
     do {
+        menu_engine_.showMenu();
         Loop ();
         score_keeper_.saveScoresToFile ();
         board_.Clear (); // ????
