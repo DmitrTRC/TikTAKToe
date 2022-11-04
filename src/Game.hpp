@@ -29,7 +29,6 @@ private:
     std::vector<Player *> players_; // vector of players
     ScoreKeeper score_keeper_; // score keeper
     Board board_; // game board
-    MenuEngine menu_engine_; // menu engine
     int current_player_{}; //
 
     // index of current player

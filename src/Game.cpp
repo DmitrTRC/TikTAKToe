@@ -27,8 +27,6 @@ Game::~Game () {
 
 //Point 2. Main Game loop. Initialize the game.
 void Game::Start () {
-    MenuEngine a;
-    a.menu();
 
     DrawLogo ();
     printTopScores ();
@@ -55,7 +53,7 @@ void Game::Start () {
 
 
     do {
-        menu_engine_.showMenu();
+
         Loop ();
         score_keeper_.saveScoresToFile ();
         board_.Clear (); // ????
